@@ -65,7 +65,7 @@
                 echo '<div class="alert alert-danger" role="alert">Register failed, ' . $message . '</div>';
             }
             ?>
-            <h3 class="text-center title-login">Register Member</h3>
+            <h3 class="text-center title-login">REGISTRATION</h3>
             <div class="form-group">
                 <input type="text" class="form-control" name="nim" placeholder="NIM">
             </div>

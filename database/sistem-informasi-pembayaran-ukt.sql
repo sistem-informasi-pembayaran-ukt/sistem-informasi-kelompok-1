@@ -155,7 +155,11 @@ INSERT INTO `semester` (`kodeSemester`, `namaSemester`) VALUES
 (9, 'Semester Awal 2018/2019'),
 (10, 'Semester Akhir 2018/2019'),
 (11, 'Semester Awal 2019/2020'),
-(12, 'Semester Akhir 2020/2021');
+(12, 'Semester Akhir 2019/2020'),
+(13, 'Semester Awal 2020/2021'),
+(14, 'Semester Akhir 2020/2021'),
+(15, 'Semester Awal 2021/2022'),
+(16, 'Semester Akhir 2021/2022');
 
 -- --------------------------------------------------------
 
