@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 29, 2020 at 12:15 PM
+-- Generation Time: Oct 17, 2020 at 01:15 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.6
 
@@ -103,7 +103,7 @@ INSERT INTO `jurusan` (`kodeJurusan`, `namaJurusan`) VALUES
 
 CREATE TABLE `mahasiswa` (
   `nim` varchar(10) NOT NULL,
-  `password` varchar(30) NOT NULL,
+  `password` varchar(60) NOT NULL,
   `nama` varchar(30) NOT NULL,
   `alamat` varchar(30) NOT NULL,
   `noTelp` varchar(12) NOT NULL,
@@ -144,22 +144,22 @@ CREATE TABLE `semester` (
 --
 
 INSERT INTO `semester` (`kodeSemester`, `namaSemester`) VALUES
-(1, 'Semester Awal 2014/2015'),
-(2, 'Semester Akhir 2014/2015'),
-(3, 'Semester Awal 2015/2016'),
-(4, 'Semester Akhir 2015/2016'),
-(5, 'Semester Awal 2016/2017'),
-(6, 'Semester Akhir 2016/2017'),
-(7, 'Semester Awal 2017/2018'),
-(8, 'Semester Akhir 2017/2018'),
-(9, 'Semester Awal 2018/2019'),
-(10, 'Semester Akhir 2018/2019'),
-(11, 'Semester Awal 2019/2020'),
-(12, 'Semester Akhir 2019/2020'),
-(13, 'Semester Awal 2020/2021'),
-(14, 'Semester Akhir 2020/2021'),
-(15, 'Semester Awal 2021/2022'),
-(16, 'Semester Akhir 2021/2022');
+(1, 'Awal 2014/2015'),
+(2, 'Akhir 2014/2015'),
+(3, 'Awal 2015/2016'),
+(4, 'Akhir 2015/2016'),
+(5, 'Awal 2016/2017'),
+(6, 'Akhir 2016/2017'),
+(7, 'Awal 2017/2018'),
+(8, 'Akhir 2017/2018'),
+(9, 'Awal 2018/2019'),
+(10, 'Akhir 2018/2019'),
+(11, 'Awal 2019/2020'),
+(12, 'Akhir 2019/2020'),
+(13, 'Awal 2020/2021'),
+(14, 'Akhir 2020/2021'),
+(15, 'Awal 2021/2022'),
+(16, 'Akhir 2021/2022');
 
 -- --------------------------------------------------------
 
@@ -273,13 +273,13 @@ ALTER TABLE `pembayaran`
 -- AUTO_INCREMENT for table `semester`
 --
 ALTER TABLE `semester`
-  MODIFY `kodeSemester` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `kodeSemester` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `ukt`
 --
 ALTER TABLE `ukt`
-  MODIFY `golonganUKT` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `golonganUKT` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- Constraints for dumped tables

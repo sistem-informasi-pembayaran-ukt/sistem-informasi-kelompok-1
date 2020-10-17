@@ -1,30 +1,32 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html>
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- Bootstrap first, then CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link rel="stylesheet" href="index.css">
-    <link rel="stylesheet" href="register.css">
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS, then local JS -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-    <script src="js/showpass.js"></script>
-    <!-- Title -->
-    <title>Register</title>
+	<!-- Required meta tags -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="keywords" content="Flat Sign Up Form Responsive Widget Template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+	<!-- CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="css/register.css">
+	<!-- Font -->
+	<link href='//fonts.googleapis.com/css?family=Lato:400,100,100italic,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'><link href='//fonts.googleapis.com/css?family=Raleway+Dots' rel='stylesheet' type='text/css'>
+	<!-- Optional JavaScript -->
+	<script src="js/showpass.js"></script>
+	<!-- Title -->
+	<title>Registrasi</title>
 </head>
 <body>
-    <div class="col-md-4 col-md-offset-4 form-login"></div>
-    <div class="outter-form-login">
-        <div class="logo-login">
-            <em class="glyphicon glyphicon-user"></em>
-        </div>
-        <form action="register.php" class="inner-register" method="post">
-            <?php
+<!--header-->
+<div class="container">
+	<div class="d-flex justify-content-center h-100">
+		<div class="card">
+			<div class="card-header">
+				<h3>Register</h3>
+			</div>
+			<div class="card-body">
+		<form action="register.php" method="post">
+		<?php
             require_once "database/pdo.php";
             $message = '';
             if (isset($_POST['register'])) {
@@ -42,7 +44,7 @@
                     $message = 'Department field is required!';
                 } elseif ($_POST['semester'] == "") {
                     $message = 'Semester field is required!';
-                } elseif ($_POST['ukt'] == "" || $_POST['ukt'] == "" ) {
+                } elseif ($_POST['ukt'] == "") {
                     $message = 'UKT field is required!';
                 } else {
                     $sql = "INSERT INTO mahasiswa (nim,password,nama,alamat,noTelp,kodeJurusan,kodeSemester,golonganUKT) 
@@ -60,31 +62,50 @@
                     ));
                     header("location:login.php");
                 }
-            }
             if ($message != "") {
                 echo '<div class="alert alert-danger" role="alert">Register failed, ' . $message . '</div>';
             }
+        }
             ?>
-            <h3 class="text-center title-login">REGISTRATION</h3>
-            <div class="form-group">
-                <input type="text" class="form-control" name="nim" placeholder="NIM">
-            </div>
-            <div class="form-group">
-                <input type="password" class="form-control" name="password" id="password" placeholder="Password">
-                <input type="checkbox" onclick="showPassword()"> Show/Hide Password
-            </div>
-            <div class="form-group">
-                <input type="text" class="form-control" name="name" placeholder="Nama Lengkap">
-            </div>
-            <div class="form-group">
-                <input type="text" class="form-control" name="address" placeholder="Alamat">
-            </div>
-            <div class="form-group">
-                <input type="text" class="form-control" name="phonenum" placeholder="Nomor Telepon">
-            </div>
-            <div class="form-group">
-            <select id="department" name="department" class="form-control">
-              <option>--- Pilih Jurusan ---</option>
+					<div class="input-group form-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class="fas fa-id-card"></i></span>
+						</div>
+						<input type="text" name="nim" class="form-control" placeholder="NIM">
+					</div>
+					<div class="input-group form-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class="fas fa-key"></i></span>
+						</div>
+						<input type="password" type="password" class="form-control" name="password" id="password" placeholder="Password">
+						<div class="input-group">
+							<input type="checkbox" onclick="showPassword()"> Show/Hide Password
+						</div>
+					</div>
+					<div class="input-group form-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class="fas fa-user"></i></span>
+						</div>
+						<input type="text" name="name" class="form-control" placeholder="Nama Lengkap">
+					</div>
+					<div class="input-group form-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class="fas fa-home"></i></span>
+						</div>
+						<input type="text" name="address" class="form-control" placeholder="Alamat">
+					</div>
+					<div class="input-group form-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class="fas fa-phone"></i></span>
+						</div>
+						<input type="text" name="phonenum" class="form-control" placeholder="No Hp">
+					</div>
+					<div class="input-group form-group">
+						<div class="input-group-prepend">
+							<label class="input-group-text" for="inputGroupSelect01">Departemen</label>
+						</div>
+  					<select class="custom-select" id="department" name="department">
+						<option>--- Pilih Departemen ---</option>
                 <?php
                 $sql = "SELECT * FROM jurusan";
                 $stmt = $pdo->prepare($sql); 
@@ -97,8 +118,11 @@
                   }
                 ?>
             </select>
-            </div>
-            <div class="form-group">
+          </div>
+					<div class="input-group form-group">
+						<div class="input-group-prepend">
+							<label class="input-group-text" for="inputGroupSelect02">Semester</label>
+						</div>
             <select id="semester" name="semester" class="form-control">
               <option>--- Pilih Semester ---</option>
                 <?php
@@ -111,11 +135,14 @@
                   foreach($stmt->fetchAll() as $k=>$r){
                     echo "<option value=\"$r[kodeSemester]\">$r[namaSemester]</option>";
                   }
-                ?>
-            </select>
-            </div>
-            <div class="form-group">
-            <select id="ukt" name="ukt" class="form-control">
+								?>
+						</select>
+					</div>
+					<div class="input-group form-group">
+						<div class="input-group-prepend">
+							<label class="input-group-text" for="inputGroupSelect03">Tarif UKT</label>
+						</div>
+						<select id="ukt" name="ukt" class="form-control">
               <option>--- Pilih Tarif UKT ---</option>
                 <?php
                 $sql = "SELECT * FROM ukt";
@@ -127,13 +154,15 @@
                   }
                 ?>
             </select>
-            <input type="submit" class="btn btn-block btn-custom-green" value="Register" name="register" />
-            <div class="text-center forget">
-                <p>Already have an account? Please <a href="login.php">Login</a></p>
-            </div>
-        </form>
-
-    </div>
-    </div>
+					</div>
+					<div class="form-group">
+						<input type="submit" value="Daftar" name="register" class="btn float-right login_btn">
+					</div>
+				</form>
+			</div>
+			</div>
+		</div>
+	</div>
+</div>
 </body>
 </html>

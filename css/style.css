@@ -64,7 +64,7 @@
 }
 
 .jumbotron {
-    background: linear-gradient(rgba(15, 17, 20, 0.938), rgba(13, 28, 48, 0.678)), url("img/teknik.jpg")center no-repeat;
+    background: linear-gradient(rgba(15, 17, 20, 0.938), rgba(13, 28, 48, 0.678)), url("../img/teknik.jpg")center no-repeat;
     background-size: cover;
     position: relative;
     height: 500px;
