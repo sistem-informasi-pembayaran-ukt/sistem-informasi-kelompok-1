@@ -24,6 +24,27 @@
 				<h3>Login</h3>
 			</div>
 			<div class="card-body">
+			<?php
+				require_once "database/pdo.php";
+				session_start();
+				if (isset($_POST['login'])) {
+					if (!empty(trim($_POST['nim'])) && !empty(trim($_POST['password']))) {
+						$user = $_POST['nim'];
+						$pass = $_POST['password'];
+						$stmt = $pdo->prepare("SELECT password FROM mahasiswa WHERE nim = '$user'");
+						$stmt->execute();
+						$hash = $stmt->fetch(PDO::FETCH_OBJ)->password;
+						if (password_verify($pass, $hash)) {
+							$_SESSION["nim"] = $_POST["nim"];
+							header("location:index.php");
+						} 
+					} else {
+						?>
+						<div class="alert alert-danger" role="alert">Failed to login, check your username and password again!</div>
+						<?php
+					}
+				}
+				?>
 				<form action="login.php" method="post">
 					<div class="input-group form-group">
 						<div class="input-group-prepend">

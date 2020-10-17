@@ -1,6 +1,8 @@
+<?php
+session_start()
+?>
 <!doctype html>
 <html lang="en">
-
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -16,31 +18,9 @@
 </head>
 
 <body id="page top">
-    <nav class="navbar navbar-expand-lg navbar-light  fixed-top" id="mainNav">
-        <div class="container">
-            <img src="img/logo.png">
-            <a class="navbar-brand text-white" href="index.html">UNIVERSITAS HASANUDDIN</a>
-            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon "></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger text-white" href="#">Login <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger text-white" href="about.html">About Us</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger text-white" href="contact.html">Contact</a>
-                    </li>
-                    <li>
-                        <i class="fab fa-youtube"></i>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+<?php
+include "navbar.php";
+?>
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
             <h1 class="display-4">UNIVERSITAS HASANUDDIN</h1>

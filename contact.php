@@ -1,3 +1,6 @@
+<?php
+session_start()
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,28 +20,9 @@
 </head>
 
 <body id="page top">
-    <nav class="navbar navbar-expand-lg navbar-light  fixed-top" id="mainNav">
-        <div class="container">
-            <img src="img/logo.png">
-            <a class="navbar-brand text-white" href="index.html">UNIVERSITAS HASANUDDIN</a>
-            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger text-white" href="#">Login <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger text-white" href="about.html">About Us</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger text-white" href="#">Contact</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+<?php
+include "navbar.php";
+?>
     <p id="judul"> HUBUNGI KAMI </p>
     <p id="parag">
         Kampus 1 <br> Kantor unit humas protokoler <br> Lantai 6 gedung rektorat kampus unhas tamalanrea <br> Jl. Perintis kemerdekaan km. 10 makassar, 90245 <br> Sulawesi selatan, INDONESIA <br> Telepon: +62 411 586200 | Fax: +62 411 585188 <br> e-mail:

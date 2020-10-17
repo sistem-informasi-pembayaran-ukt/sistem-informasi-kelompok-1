@@ -1,3 +1,6 @@
+<?php
+session_start()
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,29 +19,9 @@
 </head>
 
 <body id="page top">
-    <nav class="navbar navbar-expand-lg navbar-light  fixed-top" id="mainNav">
-        <div class="container">
-            <img src="img/logo.png">
-            <a class="navbar-brand text-white" href="index.html">UNIVERSITAS HASANUDDIN</a>
-            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon "></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger text-white" href="#">Login <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger text-white" href="about.html">About Us</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger text-white" href="contact.html">Contact</a>
-                    </li>
-
-                </ul>
-            </div>
-        </div>
-    </nav>
+<?php
+include "navbar.php";
+?>
     <h1 class="heading">About Unhas</h1>
     <div class="heading-underline"></div>
     <h4>Pusat unggulan dalam pengembangan Insani, Ilmu pengetahuan, teknologi, seni dan budaya berbasis Benua Maritim Indonesia.</h4> <br><br>
