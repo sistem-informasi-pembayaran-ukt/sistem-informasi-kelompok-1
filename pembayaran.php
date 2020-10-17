@@ -18,12 +18,12 @@ require_once "proses-pembayaran.php";
     if (isset($_POST['detail']) ){
         if ( isset($nim) ) {
 ?>
-        <p>Nama : <?php echo dataMahasiswa('nama',$pdo);?></p>
-        <p>NIM :<?php echo dataMahasiswa('nim',$pdo);?></p>
-        <p>Golongan UKT :<?php echo dataMahasiswa('golonganUKT',$pdo);?><br>
-        <p>semester :<?php echo dataMahasiswa('namaSemester',$pdo);?><br>
-        <p>jurusan :<?php echo dataMahasiswa('namaJurusan',$pdo);?><br>
-        <p>tarif ukt :<?php echo dataMahasiswa('tarifUKT',$pdo);?><br>
+        <p>Nama : <?= dataMahasiswa('nama',$pdo);?></p>
+        <p>NIM :<?= dataMahasiswa('nim',$pdo);?></p>
+        <p>Golongan UKT :<?= dataMahasiswa('golonganUKT',$pdo);?><br>
+        <p>semester :<?= dataMahasiswa('namaSemester',$pdo);?><br>
+        <p>jurusan :<?= dataMahasiswa('namaJurusan',$pdo);?><br>
+        <p>tarif ukt :<?=dataMahasiswa('tarifUKT',$pdo);?><br>
         <form method="post">
             <input type="submit" name="sembunyikanDetail"  value="Sembunyikan Detail" /> 
         </form>
@@ -49,7 +49,6 @@ require_once "proses-pembayaran.php";
         <input type="hidden" value="<?php echo date("Y-m-d");?>" name="tanggal"/></p>
         <input type="submit" value="Submit" name="submit"/></p>
 </form>
-
 
 <body>
 

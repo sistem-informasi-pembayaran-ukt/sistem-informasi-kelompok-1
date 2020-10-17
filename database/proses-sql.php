@@ -28,5 +28,16 @@ function tambahPembayaran($pdo,$bukti,$tanggal,$status){
             ':status' => $status
     ));
 }
+function pembayaran($kolom,$pdo){
+        $sql = "SELECT pembayaran.nim,pembayaran.idPembayaran,pembayaran.tanggalPembayaran, pembayaran.bukti, mahasiswa.nama,  jurusan.namaJurusan,ukt.tarifUKT
+                FROM (((pembayaran
+                INNER join mahasiswa on pembayaran.nim = mahasiswa.nim)
+                INNER JOIN jurusan ON mahasiswa.kodeJurusan = jurusan.kodeJurusan)
+                INNER JOIN ukt ON pembayaran.golonganUKT= ukt.golonganUKT)
+                WHERE status = 'Belum Terverifikasi'";
+        $stmt = $pdo->query($sql);
+        $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $rows; 
+    }
 
 ?>
