@@ -18,16 +18,16 @@ require_once "../database/pdo.php";
         <table class="table">
             <thead class="thead-light">
                 <tr>
-                    <th scope="col">Product Name</th>
-                    <th scope="col">Color</th>
-                    <th scope="col">Size</th>
-                    <th scope="col">Price</th>
-                    <th scope="col">Image</th>
+                    <th scope="col">Nama Mahasiswa</th>
+                    <th scope="col">Bukti Pembayaran</th>
+                    <th scope="col">Status</th>
+                    
                     <th scope="col">Action</th>
                     <th scope="col">Action</th>
                 </tr>
             </thead>
             <?php
+            /*
             foreach ($rows as $row) {
             ?>
                 <tbody>
@@ -51,8 +51,9 @@ require_once "../database/pdo.php";
                         </td>
                     </tr>
                 </tbody>
-            <?php
-            }
+                }
+            <?php*/
+            
             ?>
         </table>
 
