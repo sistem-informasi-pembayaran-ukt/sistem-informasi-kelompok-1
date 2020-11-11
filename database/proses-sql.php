@@ -1,7 +1,6 @@
 <?php
 require_once "pdo.php";
-$_SESSION['nim']='D121181508';
-$nim = $_SESSION['nim'];
+session_start();
 
 function dataMahasiswa($kolom,$pdo){
     $sql = "SELECT mahasiswa.nim, mahasiswa.nama, mahasiswa.alamat, mahasiswa.noTelp, mahasiswa.kodeSemester, jurusan.namaJurusan, semester.namaSemester, ukt.golonganUKT, ukt.tarifUKT
@@ -28,16 +27,20 @@ function tambahPembayaran($pdo,$bukti,$tanggal,$status){
             ':status' => $status
     ));
 }
-function pembayaran($kolom,$pdo){
-        $sql = "SELECT pembayaran.nim,pembayaran.idPembayaran,pembayaran.tanggalPembayaran, pembayaran.bukti, mahasiswa.nama,  jurusan.namaJurusan,ukt.tarifUKT
+function dataPembayaran($pdo){
+        $sql = "SELECT pembayaran.nim,pembayaran.idPembayaran,pembayaran.tanggalPembayaran, pembayaran.bukti, pembayaran.status,mahasiswa.nama,  jurusan.namaJurusan,ukt.tarifUKT
                 FROM (((pembayaran
                 INNER join mahasiswa on pembayaran.nim = mahasiswa.nim)
                 INNER JOIN jurusan ON mahasiswa.kodeJurusan = jurusan.kodeJurusan)
-                INNER JOIN ukt ON pembayaran.golonganUKT= ukt.golonganUKT)
-                WHERE status = 'Belum Terverifikasi'";
+                INNER JOIN ukt ON pembayaran.golonganUKT= ukt.golonganUKT)";
         $stmt = $pdo->query($sql);
         $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
         return $rows; 
     }
+function updateStatus($pdo,$nim){
+        $sql = "UPDATE pembayaran set status ='Sudah Terverifikasi' where nim = :nim";
+        $stmt = $pdo->prepare($sql);
+        $stmt -> execute(array(':nim' => $nim));
+}
 
 ?>

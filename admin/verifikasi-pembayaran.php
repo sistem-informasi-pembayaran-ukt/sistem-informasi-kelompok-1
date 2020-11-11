@@ -1,6 +1,11 @@
 <?php
 
 require_once "../database/pdo.php";
+require "../database/proses-sql.php";
+$rows=dataPembayaran($pdo);
+if(isset($_POST['update'])&&isset($_POST['nim'])){
+    updateStatus($pdo,$_POST['nim']);
+}
 ?>
 <!doctype html>
 <html lang="en">
@@ -12,52 +17,53 @@ require_once "../database/pdo.php";
   
     <title>Pembayaran</title>
 </head>
-
+<body>
 <h3>Data Mahasiswa </h3>
 <div class="col mt-5 ml-5 mr-5">
         <table class="table">
             <thead class="thead-light">
                 <tr>
+                    <th>No.</th>
+                <th scope="col">NIM</th>
                     <th scope="col">Nama Mahasiswa</th>
                     <th scope="col">Bukti Pembayaran</th>
                     <th scope="col">Status</th>
                     
                     <th scope="col">Action</th>
-                    <th scope="col">Action</th>
+                    
                 </tr>
             </thead>
             <?php
-            /*
+            $inew = 1;
             foreach ($rows as $row) {
+                
             ?>
                 <tbody>
                     <tr>
-                        <td><?= ($row['product_name']) ?></td>
-                        <td><?= ($row['color']) ?></td>
-                        <td><?= ($row['size']) ?></td>
-                        <td><?= ($row['price']) ?></td>
-                        <td><img src="../product-images/<?= ($row['img']) ?>" width='100' height='100'></td>
+                        <td><?=$inew?></td>
+                    <td><?= ($row['nim']) ?></td>
+                        <td><?= ($row['nama']) ?></td>
+                        <td><?= ($row['bukti']) ?></td>
+                        <td><?= ($row['status']) ?></td>
+                       
+                        
                         <td>
-                            <form method="post" action="product-admin.php?edit=<?= $row['product_id'] ?>">
-                                <input type="hidden" name="product_id" value="<?= $row['product_id'] ?>">
-                                <input type="submit" class=" btn btn-sm  btn-success" value="Edit" name="edit">
+                            <form method="post" action="verifikasi-pembayaran.php?update=<?= $row['nim'] ?>">
+                                <input type="hidden" name="nim" value="<?= $row['nim'] ?>">
+                                <input type="submit" class=" btn btn-sm  btn-success" value="Update status" name="update">
                             </form>
                         </td>
-                        <td>
-                            <form method="post" action="product-admin.php?delete=<?$row['product_id']?>">
-                                <input type="hidden" name="product_id" value="<?= $row['product_id'] ?>">
-                                <input type="submit" class=" btn btn-sm btn-success" value="Del" name="delete">
-                            </form>
-                        </td>
+                       
                     </tr>
                 </tbody>
-                }
-            <?php*/
             
+            <?php
+            $inew+=1;
+            }
             ?>
         </table>
 
-<body>
+
 
         
 

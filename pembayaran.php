@@ -1,6 +1,8 @@
 <?php
 require_once "database/pdo.php";
 require_once "proses-pembayaran.php";
+
+$nim=$_SESSION['nim'];
 ?>
 <!doctype html>
 <html lang="en">
@@ -31,7 +33,7 @@ require_once "proses-pembayaran.php";
         }
     }
     else if (!isset($_POST['detail']) || isset($_POST['sembunyikanDetail'])){
-        ?> <form method="post">
+    ?> <form method="post">
     <input type="submit" name="detail"  value="Tampilkan Detail" /> 
 </form><?
     }
