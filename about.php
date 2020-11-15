@@ -9,11 +9,11 @@ session_start()
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1.0, minimum-scale=1.0, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="css/about.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2F33n5dQ81WUE00s/" crossorigin="anonymous">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bebas+Neue&family=Passion+One&family=Staatliches&display=swap" rel="stylesheet">
 
     <title>about</title>
 </head>
@@ -22,28 +22,34 @@ session_start()
 <?php
 include "navbar.php";
 ?>
+<div class="container">
     <h1 class="heading">About Unhas</h1>
+    
     <div class="heading-underline"></div>
     <h4>Pusat unggulan dalam pengembangan Insani, Ilmu pengetahuan, teknologi, seni dan budaya berbasis Benua Maritim Indonesia.</h4> <br><br>
     <!-- <h4>MANUSIAWI, ARIF, RELIGIUS, INTEGRITAS, TANGGUH DAN MANDIRI</h4> <br> !-->
-    <img class="judul" src="img/unhas2.svg" width="50%" style="display: block; margin: auto;">
-    <hr>
+
+</div>
+   
+    <img src="img/unhas2.svg" 
+    style= "display: block; margin: auto;"> 
+    
+    <br><br>
     <h2>Leadership</h2><br>
     <div class="row text-center">
         <div class="col-sm-6 bg success pt-5 pb-5">
-            <img src="img/rektor.jpg" width="40%" style="display: block; margin: auto;">
+            <img src="img/rektor.jpg" style="display: block; margin: auto;">
             <p>Prof. Dr. Dwia Aries Tina Pulubuhu, M.A</p>
             <p>Rektor Universitas Hasanuddin</p>
         </div>
         <div class="col-sm-6 bg success pt-5 pb-5">
-            <img src="img/dekan.png" width="40%" style="display: block; margin: auto;">
+            <img src="img/dekan.png" style="display: block; margin: auto;">
             <p>Prof.Dr.Ir.Muhammad Arsyad Thaha, M.T.</p>
             <p>Dekan Fakultas Teknik Universitas Hasanuddin</p>
         </div>
     </div>
-    <hr>
-    <br>
-    <h2>Sejarah Singkat UNHAS</h2>
+    <div class="container">
+    <h2>Sejarah Singkat UNHAS </h2>
     <p> Universitas Hasanuddin, yang kemudian disingkat UNHAS, merupakan sebuah perguruan tinggi negeri di kota Makassar, Provinsi Sulawesi Selatan, Indonesia, yang berdiri pada 10 September 1956. Perguruan tinggi ini semula merupakan pengembangan dari Fakultas
         Ekonomi Universitas Indonesia ketika Bung Hatta masih menjadi Wakil Presiden. Kampus Unhas semula dibangun di Baraya atau Kampus Baraya. Namun, awal tahun 1980-an, ketika Rektor dijabat Prof. Dr. Ahmad Amiruddin, Kampus Unhas dipindahkan ke Tamalanrea,
         karena Kampus Baraya sudah berada di tengah kota.</p>
@@ -56,7 +62,7 @@ include "navbar.php";
         Pada tahun ini, Universitas Hasanuddin memasuki tantangan sekaligus harapan yang baru, pasalnya UNHAS mulai menjalankan penuh statusnya sebagai Perguruan Tinggi Negeri Berbadan Hukum (PTNBH) yang sebelumnya sejak tahun lalu UNHAS telah menguji coba sistem
         tersebut yang sudah diamanahkan Pemerintah bersama belasan PTN lainnya.
     </p>
-    <hr>
+    
     <h2>Fakultas Teknik Universitas Hasanuddin </h2>
     <p>Sejarah Singkat Fakultas Teknik (FT) adalah salah satu fakultas pada Universitas Hasanuddin (UNHAS) Makassar, berdiri tahun 1960. Ketika itu kampus UNHAS masih berlokasi di Baraya. Misi utama pendirian Fakultas Teknik pada masa itu adalah memberi
         peluang kepada putera-puteri yang berasal dari daerah untuk menempuh jenjang pendidikan tinggi dalam rangka memenuhi kebutuhan tenaga ahli bidang Teknik. Pada mulanya kurikulum Fakultas Teknik hanya merupakan kurikulum tunggal dengan beberapa
@@ -116,8 +122,8 @@ include "navbar.php";
                 Mengintensifkan penelitian untuk pembangunan berkelanjutan di kawasan Indonesia Timur.
             </li>
         </ul>
-
     </p>
+    </div>
+    </div>
 </body>
-
 </html>

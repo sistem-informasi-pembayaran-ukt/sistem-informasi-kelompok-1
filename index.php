@@ -25,13 +25,13 @@ include "navbar.php";
         <div class="container">
             <h1 class="display-4">UNIVERSITAS HASANUDDIN</h1>
             <p class="lead">Selamat Datang di Website Sistem Informasi Pembayaran UKT Universitas Hasanuddin.</p>
-        </div>
+       </div>
     </div>
     <div class="row">
         <div class="col-sm-6 bg-success pt-5 pb-5 bg-light" data-aos="fade-right">
             <h6>Welcome to Our Campus</h6>
-            <br> Universitas Hasanuddin, disingkat UNHAS, adalah perguruan tinggi negeri di Makassar, Sulawesi Selatan, Indonesia, yang berdiri pada 11 Juni 1956. Perguruan tinggi ini semula merupakan pengembangan dari Fakultas Ekonomi Universitas Indonesia.
-            Kampus UNHAS mempunyai areal seluas 220 hektare di Tamalanrea dengan berbagai fasilitas. Telah dikembangkan kampus baru UNHAS yang dikhususkan untuk Fakultas Teknik yang terletak di kabupaten Gowa.
+            <p> Universitas Hasanuddin, disingkat UNHAS, adalah perguruan tinggi negeri di Makassar, Sulawesi Selatan, Indonesia, yang berdiri pada 11 Juni 1956. Perguruan tinggi ini semula merupakan pengembangan dari Fakultas Ekonomi Universitas Indonesia.
+            Kampus UNHAS mempunyai areal seluas 220 hektare di Tamalanrea dengan berbagai fasilitas. Telah dikembangkan kampus baru UNHAS yang dikhususkan untuk Fakultas Teknik yang terletak di kabupaten Gowa.</p>
         </div>
         <div class="col-sm-6 bg success pt-5 pb-5 " data-aos="fade-left">
             <img class="img-fluid" src="img/UH.jpg">
