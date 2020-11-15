@@ -2,7 +2,6 @@
 require_once "database/pdo.php";
 require_once "proses-pembayaran.php";
 
-$nim=$_SESSION['nim'];
 ?>
 <!doctype html>
 <html lang="en">
@@ -14,11 +13,21 @@ $nim=$_SESSION['nim'];
   
     <title>Pembayaran</title>
 </head>
+<body>
+<?php
+    if (!isset($_SESSION['nim'])){
+        //Tampilan maaf halaman ini tidak bisa diakses
+        echo "<h3>Maaf Halaman Ini Tidak Bisa Diakses";
+    }
+    else {
 
+    
+?>
 <h3>Data Mahasiswa </h3>
 <?php
     if (isset($_POST['detail']) ){
-        if ( isset($nim) ) {
+        if ( isset($_SESSION['nim']) ) {
+          
 ?>
         <p>Nama : <?= dataMahasiswa('nama',$pdo);?></p>
         <p>NIM :<?= dataMahasiswa('nim',$pdo);?></p>
@@ -52,9 +61,9 @@ $nim=$_SESSION['nim'];
         <input type="submit" value="Submit" name="submit"/></p>
 </form>
 
-<body>
-
-        
+<?
+    }
+  ?>      
 
 </body>
 
