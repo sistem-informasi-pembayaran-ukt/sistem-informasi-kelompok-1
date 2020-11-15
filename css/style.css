@@ -64,10 +64,10 @@
 }
 
 .jumbotron {
-    background: linear-gradient(rgba(15, 17, 20, 0.938), rgba(13, 28, 48, 0.678)), url("../img/teknik.jpg")center no-repeat;
+    background: linear-gradient(rgba(15, 17, 20, 0.938), rgba(13, 28, 48, 0.678)), url("../img/koffte.jpg")center no-repeat;
     background-size: cover;
     position: relative;
-    height: 500px;
+    height: 600px;
     margin-top: -120px;
 }
 
@@ -89,4 +89,15 @@
 
 img {
     height: 250px;
+}
+
+.container {
+    display: block;
+    align-items: center;
+    justify-content: center;
+}
+
+.container p {
+    padding: 15px;
+    text-align: justify;
 }
