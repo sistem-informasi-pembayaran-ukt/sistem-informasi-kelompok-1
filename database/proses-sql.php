@@ -37,8 +37,13 @@ function dataPembayaran($pdo){
         $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
         return $rows; 
     }
-function updateStatus($pdo,$nim){
+function verifikasi($pdo,$nim){
         $sql = "UPDATE pembayaran set status ='Sudah Terverifikasi' where nim = :nim";
+        $stmt = $pdo->prepare($sql);
+        $stmt -> execute(array(':nim' => $nim));
+}
+function tidakTerverifikasi($pdo,$nim){
+        $sql = "UPDATE pembayaran set status ='Tidak Terverifikasi' where nim = :nim";
         $stmt = $pdo->prepare($sql);
         $stmt -> execute(array(':nim' => $nim));
 }
