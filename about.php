@@ -31,8 +31,12 @@ include "navbar.php";
 
 </div>
    
-    <img src="img/unhas2.svg" 
-    style= "display: block; margin: auto;"> 
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    
+  </div>
+</div>
+   
     
     <br><br>
     <h2>Leadership</h2><br>
@@ -49,7 +53,7 @@ include "navbar.php";
         </div>
     </div>
     <div class="container">
-    <h2>Sejarah Singkat UNHAS </h2>
+    <h2>Tentang Universitas Hasanuddin </h2>
     <p> Universitas Hasanuddin, yang kemudian disingkat UNHAS, merupakan sebuah perguruan tinggi negeri di kota Makassar, Provinsi Sulawesi Selatan, Indonesia, yang berdiri pada 10 September 1956. Perguruan tinggi ini semula merupakan pengembangan dari Fakultas
         Ekonomi Universitas Indonesia ketika Bung Hatta masih menjadi Wakil Presiden. Kampus Unhas semula dibangun di Baraya atau Kampus Baraya. Namun, awal tahun 1980-an, ketika Rektor dijabat Prof. Dr. Ahmad Amiruddin, Kampus Unhas dipindahkan ke Tamalanrea,
         karena Kampus Baraya sudah berada di tengah kota.</p>
@@ -63,7 +67,7 @@ include "navbar.php";
         tersebut yang sudah diamanahkan Pemerintah bersama belasan PTN lainnya.
     </p>
     
-    <h2>Fakultas Teknik Universitas Hasanuddin </h2>
+    <h2>Tentang Fakultas Teknik Universitas Hasanuddin </h2>
     <p>Sejarah Singkat Fakultas Teknik (FT) adalah salah satu fakultas pada Universitas Hasanuddin (UNHAS) Makassar, berdiri tahun 1960. Ketika itu kampus UNHAS masih berlokasi di Baraya. Misi utama pendirian Fakultas Teknik pada masa itu adalah memberi
         peluang kepada putera-puteri yang berasal dari daerah untuk menempuh jenjang pendidikan tinggi dalam rangka memenuhi kebutuhan tenaga ahli bidang Teknik. Pada mulanya kurikulum Fakultas Teknik hanya merupakan kurikulum tunggal dengan beberapa
         matakuliah pilihan yang terbatas. Kurikulum ini mengalami berbagai perubahan dan perkembangan sejak tahun 1963, termasuk peralihan dari Program Sarjana Muda, Program Sarjana 6 tahun, sampai ke Program Strata satu.</p>
@@ -124,6 +128,12 @@ include "navbar.php";
         </ul>
     </p>
     </div>
+    </div>
+    <div class="footer-copyright text-center py-3">
+        <p>&copy; Copyright
+            <a href="#">unhas.com</a>
+        </p>
+        <p>Designed By Group 1</p>
     </div>
 </body>
 </html>

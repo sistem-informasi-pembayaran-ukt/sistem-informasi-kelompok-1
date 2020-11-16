@@ -23,7 +23,12 @@ session_start()
 <?php
 include "navbar.php";
 ?>
-    <p id="judul"> HUBUNGI KAMI </p>
+<p id="judul"> Peta Kampus </p>
+<div class="box">
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15892.832806807173!2d119.49358618589373!3d-5.229958239582035!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dbee72aa2cfa7b5%3A0x6866705455cbe08e!2sFAKULTAS%20TEKNIK%20UNHAS!5e0!3m2!1sid!2sid!4v1605549649721!5m2!1sid!2sid" width="750" height="500" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+</div>
+
+    
     <p id="parag">
         Kampus 1 <br> Kantor unit humas protokoler <br> Lantai 6 gedung rektorat kampus unhas tamalanrea <br> Jl. Perintis kemerdekaan km. 10 makassar, 90245 <br> Sulawesi selatan, INDONESIA <br> Telepon: +62 411 586200 | Fax: +62 411 585188 <br> e-mail:
         ppid@unhas.ac.id
@@ -31,7 +36,12 @@ include "navbar.php";
     <p>
         Kampus 2 <br> Jalan Poros Malino Km.6, Bontomarannu. <br> Gowa, Sulawesi Selatan. 92171 <br> e-mail : teknik@unhas.ac.id
     </p>
-
+    <div class="footer-copyright text-center py-3">
+        <a>&copy; Copyright
+            <a href="#">unhas.com</a>
+        </a>
+        <br>Designed By Group 1</br>
+    </div>
 </body>
 
 </html>

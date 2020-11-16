@@ -24,7 +24,7 @@ include "navbar.php";
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
             <h1 class="display-4">UNIVERSITAS HASANUDDIN</h1>
-            <p class="lead">Selamat Datang di Website Sistem Informasi Pembayaran UKT Universitas Hasanuddin.</p>
+            <p class="lead">Selamat Datang di Website Sistem Informasi Pembayaran UKT. <br> Departemen Teknik Informatika. Universitas Hasanuddin.</p>
        </div>
     </div>
     <div class="row">
@@ -37,6 +37,13 @@ include "navbar.php";
             <img class="img-fluid" src="img/UH.jpg">
         </div>
     </div>
+    <div class="footer-copyright text-center py-3">
+        <p>&copy; Copyright
+            <a href="#">unhas.com</a>
+        </p>
+        <p>Designed By Group 1</p>
+    </div>
+ 
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

@@ -13,16 +13,16 @@
                 if (isset($_SESSION['nim'])) {
                 ?>
                     <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger text-white" href="about.php">About Us</a>
+                        <a class="nav-link js-scroll-trigger text-white" href="about.php">Tentang UH</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger text-white" href="contact.php">Contact</a>
+                        <a class="nav-link js-scroll-trigger text-white" href="contact.php">Kontak</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link js-scroll-trigger text-white" href="profile.php">Profile</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger text-white" href="logout.php">Logout</a>
+                        <a class="nav-link js-scroll-trigger text-white" href="logout.php">Keluar</a>
                     </li>
             </ul>
             <!-- Shown Navbar if user hasn't logged in -->
@@ -33,10 +33,10 @@
                 <a class="nav-link js-scroll-trigger text-white" href="login.php">Login <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link js-scroll-trigger text-white" href="about.php">About Us</a>
+                <a class="nav-link js-scroll-trigger text-white" href="about.php">Tentang UH</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link js-scroll-trigger text-white" href="contact.php">Contact</a>
+                <a class="nav-link js-scroll-trigger text-white" href="contact.php">Kontak</a>
             </li>
         </ul>
         <?php
