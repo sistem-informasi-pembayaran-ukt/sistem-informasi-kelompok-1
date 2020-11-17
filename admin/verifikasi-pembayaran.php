@@ -23,16 +23,8 @@ require "../database/proses-sql.php";
     else {*/
         
         $rows=dataPembayaran($pdo);
-        if(isset($_POST['update'])&&isset($_POST['nim'])){
-            verifikasi($pdo,$_POST['nim']);
-            echo  "<script> alert('Berhasil diupdate');
-                   </script>"; 
-         
-        }
-        if(isset($_POST['updateTidak'])&&isset($_POST['nim'])){
-            tidakTerverifikasi($pdo,$_POST['nim']);
-        }
-        else{
+        
+        
 
         
         
@@ -90,15 +82,17 @@ require "../database/proses-sql.php";
                            
                         ?>
                         <td>
-                            <form method="post" action="verifikasi-pembayaran.php?update=<?= $row['nim'] ?>">
+                            <form method="post" action="proses-verifikasi.php?update=<?= $row['nim'] ?>">
                                 <input type="hidden" name="nim" value="<?= $row['nim'] ?>">
-                                <input type="submit" class=" btn btn-sm  btn-success" value="Verifikasi Sesuai" name="update">
+                                <input type="hidden" name="status" value="Verifikasi Sesuai">
+                                <input type="submit" class=" btn btn-sm  btn-success" value="Verifikasi" name="update">
                             </form>
                         </td>
                         <td>
-                            <form method="post" action="verifikasi-pembayaran.php?update=<?= $row['nim'] ?>">
+                            <form method="post" action="proses-verifikasi.php?update=<?= $row['nim'] ?>">
                                 <input type="hidden" name="nim" value="<?= $row['nim'] ?>">
-                                <input type="submit" class=" btn btn-sm  btn-danger" value="Tidak terverikasi" name="updateTidak">
+                                <input type="hidden" name="status" value="Tidak Terverifikasi">
+                                <input type="submit" class=" btn btn-sm  btn-danger" value="Tidak Terverikasi" name="updateTidak">
                             </form>
                         </td>
                         <?
@@ -111,7 +105,7 @@ require "../database/proses-sql.php";
             
             <?php
             $inew+=1;
-            }}
+            }
             ?>
         </table>
 
