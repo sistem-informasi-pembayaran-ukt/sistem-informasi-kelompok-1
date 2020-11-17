@@ -33,18 +33,24 @@
     transform: scaleX(1)
 }
 
+.container {
+    position: relative;
+    margin: 0 auto;
+}
+
 .container img {
     height: 50px;
 }
 
-p {
-    margin-top: 100px;
+#parag {
+    margin-top: 700px;
 }
 
 .box {
-    position: inline-block;
-    padding: 20px;
-    margin-left: 0 auto;
+    position: absolute;
+    padding: auto;
+    margin-left: 190px;
+    margin-top: 50px;
 }
 
 .footer-copyright {
@@ -56,5 +62,14 @@ hr {
     border-color: rgb(119, 2, 2);
     width: 100px;
     border-width: 5px;
-    border-radius: 50px;
+    border-radius: 0px;
+}
+.row{
+    margin-top: 600px;
+    background-color:white;
+}
+.col-sm-6{
+    margin:0 auto;
+
+    
 }
