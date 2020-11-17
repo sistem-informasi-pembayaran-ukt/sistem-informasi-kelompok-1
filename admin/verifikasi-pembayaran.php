@@ -108,6 +108,7 @@ require "../database/proses-sql.php";
         </table>
 
 </body>
-<?
+<?php
+
 ?>
 </html>
