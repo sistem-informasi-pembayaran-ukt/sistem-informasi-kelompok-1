@@ -3,7 +3,7 @@ require_once "database/pdo.php";
 require_once "proses-pembayaran.php";
 
 ?>
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -16,6 +16,7 @@ require_once "proses-pembayaran.php";
 
     <title>Pembayaran</title>
 </head>
+
 <body class="col mt-5 ml-5 mr-5">
 <?php
     if (!isset($_SESSION['nim'])){
@@ -32,9 +33,9 @@ require_once "proses-pembayaran.php";
             <form method="post">
                 <input class="btn btn-sm btn-success" type="submit" name="detail"  value="Tampilkan Detail" /> 
             </form>
-<?
+<?php
         }
-        else{
+        else {
             if ( isset($_SESSION['nim']) ) {
           
 ?>
@@ -47,7 +48,7 @@ require_once "proses-pembayaran.php";
                 <form method="post">
                     <input class="btn btn-sm btn-success" type="submit" name="sembunyikanDetail"  value="Sembunyikan Detail" /> 
                 </form>
-<?
+<?php
             }
         }
     
@@ -65,7 +66,7 @@ require_once "proses-pembayaran.php";
             <input class="btn btn-sm btn-success" type="submit" value="Submit" name="submit">
         </form>
 
-<?
+<?php
     }
 ?>      
 

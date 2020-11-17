@@ -37,18 +37,11 @@ function dataPembayaran($pdo){
         $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
         return $rows; 
     }
-function verifikasi($pdo,$nim,$status){
-        $sql = "UPDATE pembayaran set status = :status where nim = :nim";
+function verifikasi($pdo,$idPembayaran,$status){
+        $sql = "UPDATE pembayaran set status = :status where idPembayaran = :idPembayaran";
         $stmt = $pdo->prepare($sql);
-        $stmt -> execute(array(':nim' => $nim, ':status'=>$status));
+        $stmt -> execute(array(':idPembayaran' => $idPembayaran, ':status'=>$status));
 }
-/*
-function tidakTerverifikasi($pdo,$nim){
-        $sql = "UPDATE pembayaran set status ='Tidak Terverifikasi' where nim = :nim";
-        $stmt = $pdo->prepare($sql);
-        $stmt -> execute(array(':nim' => $nim));
-}
-*/
 
 function tampilDataSemester($pdo,$kodeSemester) {
         $sql="SELECT mahasiswa.nim, mahasiswa.nama, jurusan.namaJurusan, semester.namaSemester,pembayaran.tanggalPembayaran 
