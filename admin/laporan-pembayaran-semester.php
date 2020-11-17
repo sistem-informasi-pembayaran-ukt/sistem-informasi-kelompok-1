@@ -15,7 +15,7 @@ require "../database/proses-sql.php";
     <title>Laporan Pembayaran</title>
   </head>
  
-  <body>
+  <body class="col mt-5 ml-5 mr-5">
     <h1>Laporan Pembayaran</h1>
     <form method="POST" action="">
 <h2> Pilih Semester </h2>
@@ -42,7 +42,7 @@ require "../database/proses-sql.php";
 </h4>
 </form>
 
-    <table class="table">
+    <table class="table mr-5">
     <thead class="thead-dark">
     <tr>
       <th scope="col">No.</th>
