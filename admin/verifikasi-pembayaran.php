@@ -79,7 +79,16 @@ require "../database/proses-sql.php";
                         
                         <td><?= ($row['status']) ?></td>
                        
-                        
+                        <?php 
+                            if($row['status']!= "Belum Terverifikasi"){
+                        ?>
+                            <td></td>
+                        <?php
+                            }
+                            else {
+
+                           
+                        ?>
                         <td>
                             <form method="post" action="verifikasi-pembayaran.php?update=<?= $row['nim'] ?>">
                                 <input type="hidden" name="nim" value="<?= $row['nim'] ?>">
@@ -89,9 +98,12 @@ require "../database/proses-sql.php";
                         <td>
                             <form method="post" action="verifikasi-pembayaran.php?update=<?= $row['nim'] ?>">
                                 <input type="hidden" name="nim" value="<?= $row['nim'] ?>">
-                                <input type="submit" class=" btn btn-sm  btn-success" value="Tidak terverikasi" name="updateTidak">
+                                <input type="submit" class=" btn btn-sm  btn-danger" value="Tidak terverikasi" name="updateTidak">
                             </form>
                         </td>
+                        <?
+                            }
+                        ?>
                      
                        
                     </tr>
