@@ -9,7 +9,10 @@ require "../database/proses-sql.php";
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
     <title>Pembayaran</title>
 </head>
 <?php
@@ -34,10 +37,10 @@ require "../database/proses-sql.php";
         
         
 ?>
-<body>
+<body class="col mt-5 ml-5 mr-5">
 <h3>Data Mahasiswa </h3>
-<button onclick="runPopUp()">Tombol Ini</button>
-<div class="col mt-5 ml-5 mr-5">
+
+<div class="col mr-5">
         <table class="table">
             <thead class="thead-light">
                 <tr>
@@ -46,8 +49,9 @@ require "../database/proses-sql.php";
                     <th scope="col">Nama Mahasiswa</th>
                     <th scope="col">Bukti Pembayaran</th>
                     <th scope="col">Status</th>
-                    
+
                     <th scope="col">Action</th>
+                    <th></th>
                     
                 </tr>
             </thead>
@@ -75,7 +79,16 @@ require "../database/proses-sql.php";
                         
                         <td><?= ($row['status']) ?></td>
                        
-                        
+                        <?php 
+                            if($row['status']!= "Belum Terverifikasi"){
+                        ?>
+                            <td></td>
+                        <?php
+                            }
+                            else {
+
+                           
+                        ?>
                         <td>
                             <form method="post" action="verifikasi-pembayaran.php?update=<?= $row['nim'] ?>">
                                 <input type="hidden" name="nim" value="<?= $row['nim'] ?>">
@@ -85,9 +98,12 @@ require "../database/proses-sql.php";
                         <td>
                             <form method="post" action="verifikasi-pembayaran.php?update=<?= $row['nim'] ?>">
                                 <input type="hidden" name="nim" value="<?= $row['nim'] ?>">
-                                <input type="submit" class=" btn btn-sm  btn-success" value="Tidak terverikasi" name="updateTidak">
+                                <input type="submit" class=" btn btn-sm  btn-danger" value="Tidak terverikasi" name="updateTidak">
                             </form>
                         </td>
+                        <?
+                            }
+                        ?>
                      
                        
                     </tr>
