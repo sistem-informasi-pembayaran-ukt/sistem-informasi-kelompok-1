@@ -48,4 +48,27 @@ function tidakTerverifikasi($pdo,$nim){
         $stmt -> execute(array(':nim' => $nim));
 }
 
+function tampilDataSemester($pdo,$kodeSemester) {
+        $sql="SELECT mahasiswa.nim, mahasiswa.nama, jurusan.namaJurusan, semester.namaSemester,pembayaran.tanggalPembayaran 
+              FROM (((mahasiswa 
+              inner join pembayaran on mahasiswa.nim = pembayaran.nim) 
+              inner join jurusan on jurusan.kodeJurusan = mahasiswa.kodeJurusan) 
+              inner join semester on semester.kodeSemester = mahasiswa.kodeSemester) 
+              where pembayaran.kodeSemester=$kodeSemester";
+        $stmt = $pdo->query($sql);
+        $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $rows;
+}
+function tampilDataJurusan($pdo,$kodeJurusan) {
+        $sql="SELECT mahasiswa.nim, mahasiswa.nama, jurusan.namaJurusan, semester.namaSemester,pembayaran.tanggalPembayaran 
+              FROM (((mahasiswa 
+              inner join pembayaran on mahasiswa.nim = pembayaran.nim) 
+              inner join jurusan on jurusan.kodeJurusan = mahasiswa.kodeJurusan) 
+              inner join semester on semester.kodeSemester = mahasiswa.kodeSemester) 
+              where pembayaran.kodeSemester=$kodeSemester";
+        $stmt = $pdo->query($sql);
+        $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $rows;
+}
+
 ?>
