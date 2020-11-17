@@ -12,9 +12,12 @@
 	<!-- Font -->
 	<link href='//fonts.googleapis.com/css?family=Lato:400,100,100italic,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'><link href='//fonts.googleapis.com/css?family=Raleway+Dots' rel='stylesheet' type='text/css'>
 	<!-- Optional JavaScript -->
+	<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="js/showpass.js"></script>
+	<script src="js/alert.js"></script>
 	<!-- Title -->
-	<title>Registrasi</title>
+	<title>Register</title>
 </head>
 <body>
 <!--header-->
@@ -22,7 +25,7 @@
 	<div class="d-flex justify-content-center h-100">
 		<div class="card">
 			<div class="card-header">
-				<h3>Register</h3>
+				<h3>Silahkan Registrasi Terlebih Dahulu !</h3>
 			</div>
 			<div class="card-body">
 		<form action="register.php" method="post">
@@ -30,23 +33,9 @@
             require_once "database/pdo.php";
             $message = '';
             if (isset($_POST['register'])) {
-                if ($_POST['nim'] == "") {
-                    $message = 'NIM field is required!';
-                } elseif ($_POST['password'] == "") {
-                    $message = 'Password field is required!';
-                } elseif ($_POST['name'] == "") {
-                    $message = 'Name field is required!';
-                } elseif ($_POST['address'] == "") {
-                    $message = 'Address field is required!';
-                } elseif ($_POST['phonenum'] == "") {
-                    $message = 'Phone Number field is required!';
-                } elseif ($_POST['department'] == "") {
-                    $message = 'Department field is required!';
-                } elseif ($_POST['semester'] == "") {
-                    $message = 'Semester field is required!';
-                } elseif ($_POST['ukt'] == "") {
-                    $message = 'UKT field is required!';
-                } else {
+								if (!empty(trim($_POST['nim'])) && !empty(trim($_POST['password'])) && !empty(trim($_POST['nama']) 
+								&& !empty(trim($_POST['alamat'])) && !empty(trim($_POST['noTelp'])) && !empty(trim($_POST['kodeJurusan']))
+								&& !empty(trim($_POST['kodeSemester'])) && !empty(trim($_POST['golonganUKT'])))) {
                     $sql = "INSERT INTO mahasiswa (nim,password,nama,alamat,noTelp,kodeJurusan,kodeSemester,golonganUKT) 
                       VALUES (:nim, :password, :nama, :alamat, :noTelp, :kodeJurusan, :kodeSemester, :golonganUKT)";
                     $stmt = $pdo->prepare($sql);
@@ -61,10 +50,12 @@
                       ':golonganUKT' => $_POST['ukt'],
                     ));
                     header("location:login.php");
-                }
-            if ($message != "") {
-                echo '<div class="alert alert-danger" role="alert">Register failed, ' . $message . '</div>';
-            }
+								}
+								else {
+									?>
+									<div class="alert alert-danger" role="alert">Failed to Register, All field are require!</div>
+									<?php
+						}		
         }
             ?>
 					<div class="input-group form-group">
@@ -156,7 +147,7 @@
             </select>
 					</div>
 					<div class="form-group">
-						<input type="submit" value="Daftar" name="register" class="btn float-right login_btn">
+						<input type="submit" value="SUBMIT" name="register" class="btn float-right login_btn">
 					</div>
 				</form>
 			</div>

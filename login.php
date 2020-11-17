@@ -14,6 +14,7 @@
   <!-- Optional JavaScript -->
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="js/alert.js"></script>
 <title>Login Page</title>   
 </head>
 <body>
@@ -38,9 +39,14 @@
 							$_SESSION["nim"] = $_POST["nim"];
 							header("location:index.php");
 						} 
+						else {
+							?>
+							<div class="alert alert-danger" role="alert">Failed to login, check your username and password again!</div>
+							<?php
+						}
 					} else {
 						?>
-						<div class="alert alert-danger" role="alert">Failed to login, check your username and password again!</div>
+						<div class="alert alert-danger" role="alert">Failed to login, please fill out all the field!</div>
 						<?php
 					}
 				}
