@@ -25,8 +25,16 @@ require_once "proses-pembayaran.php";
     else {   
 ?>
         <h1>Data Mahasiswa </h3>
-<?php
-        if (isset($_POST['detail']) ){
+<?php   
+
+        if (!isset($_POST['detail']) || isset($_POST['sembunyikanDetail'])){
+?> 
+            <form method="post">
+                <input class="btn btn-sm btn-success" type="submit" name="detail"  value="Tampilkan Detail" /> 
+            </form>
+<?
+        }
+        else{
             if ( isset($_SESSION['nim']) ) {
           
 ?>
@@ -41,14 +49,6 @@ require_once "proses-pembayaran.php";
                 </form>
 <?
             }
-        }
-
-        else if (!isset($_POST['detail']) || isset($_POST['sembunyikanDetail'])){
-?> 
-            <form method="post">
-                <input class="btn btn-sm btn-success" type="submit" name="detail"  value="Tampilkan Detail" /> 
-            </form>
-<?
         }
     
 ?>
