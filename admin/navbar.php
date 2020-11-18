@@ -8,13 +8,16 @@
         <a class="nav-link" href="admin.php">Beranda <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Daftar Mahasiswa</a>
+        <a class="nav-link disabled" href="#">Daftar Mahasiswa</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="laporan-pembayaran-semester.php">Laporan Pembayaran</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="verifikasi-pembayaran.php">Verifikasi Pembayaran</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link disabled" href="#">Foto Bukti haha</a>
+        <a class="nav-link" href="lihat-bukti">Foto Bukti</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="logout.php">Logout</a>

@@ -90,7 +90,7 @@ require "../database/proses-sql.php";
                                 <input type="submit" class=" btn btn-sm  btn-danger" value="Tidak Terverikasi" name="updateTidak">
                             </form>
                         </td>
-                        <?
+                        <?php
                             }
                         ?>
                      

@@ -33,9 +33,9 @@
             require_once "database/pdo.php";
             $message = '';
             if (isset($_POST['register'])) {
-								if (!empty(trim($_POST['nim'])) && !empty(trim($_POST['password'])) && !empty(trim($_POST['nama']) 
-								&& !empty(trim($_POST['alamat'])) && !empty(trim($_POST['noTelp'])) && !empty(trim($_POST['kodeJurusan']))
-								&& !empty(trim($_POST['kodeSemester'])) && !empty(trim($_POST['golonganUKT'])))) {
+								if (!empty(trim($_POST['nim'])) && !empty(trim($_POST['password'])) && !empty(trim($_POST['name']) 
+								&& !empty(trim($_POST['address'])) && !empty(trim($_POST['phonenum'])) && !empty(trim($_POST['department']))
+								&& !empty(trim($_POST['semester'])) && !empty(trim($_POST['ukt'])))) {
                     $sql = "INSERT INTO mahasiswa (nim,password,nama,alamat,noTelp,kodeJurusan,kodeSemester,golonganUKT) 
                       VALUES (:nim, :password, :nama, :alamat, :noTelp, :kodeJurusan, :kodeSemester, :golonganUKT)";
                     $stmt = $pdo->prepare($sql);
