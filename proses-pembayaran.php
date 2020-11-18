@@ -19,7 +19,7 @@ if (isset($_POST['submit']) && isset($_POST['tanggal'])) {
         $namaFileTersimpan = $_POST['tanggal']."_".$rand.".".$extfix;
 
         //cek file belum diupload
-        if ($_FILES['bukti']['error']==4){ 
+        if ($_FILES['bukti']['error'] == 4){ 
             echo  "<script> alert('Silahkan masukkan file anda dulu');
                   window.location='pembayaran.php' </script>"; 
         }

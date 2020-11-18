@@ -25,9 +25,6 @@ require "../database/proses-sql.php";
         $rows=dataPembayaran($pdo);
         
         
-
-        
-        
 ?>
 <body class="col mt-5 ml-5 mr-5">
 <h3>Data Mahasiswa </h3>
@@ -41,7 +38,6 @@ require "../database/proses-sql.php";
                     <th scope="col">Nama Mahasiswa</th>
                     <th scope="col">Bukti Pembayaran</th>
                     <th scope="col">Status</th>
-
                     <th scope="col">Action</th>
                     <th></th>
                     
@@ -54,22 +50,19 @@ require "../database/proses-sql.php";
             ?>
                 <tbody>
                     <tr>
-                        <td><?=$inew?></td>
-                        <td><?= ($row['nim']) ?></td>
-                        <td><?= ($row['nama']) ?></td>
-                        <td><?= ($row['bukti']) ?>
+                        <td><?=$inew;?></td>
+                        <td><?= $row['nim']; ?></td>
+                        <td><?= ($row['nama']); ?></td>
+                        <td><?= ($row['bukti']); ?>
                             <br>
-                        
-                            <form method="post" action="lihat-bukti.php?show=<?= $row['bukti'] ?>">
-                                <input type="hidden" name="bukti" value="<?= $row['bukti'] ?>">
-                                <input type="hidden" name="nama" value="<?= $row['nama'] ?>">
-                                <input type="hidden" name="nim" value="<?= $row['nim'] ?>">
+                            <form method="post" action="lihat-bukti.php?show=<?= $row['bukti']; ?>">
+                                <input type="hidden" name="bukti" value="<?= $row['bukti']; ?>">
+                                <input type="hidden" name="nama" value="<?= $row['nama']; ?>">
+                                <input type="hidden" name="nim" value="<?= $row['nim']; ?>">
                                 <input type="submit" class=" btn btn-sm  btn-success" value="Lihat Bukti" name="lihatBukti">
                             </form>
-                            </td>
-
-                        
-                        <td><?= ($row['status']) ?></td>
+                        </td>
+                        <td><?= $row['status']; ?></td>
                        
                         <?php 
                             if($row['status']!= "Belum Terverifikasi"){
@@ -82,20 +75,22 @@ require "../database/proses-sql.php";
                            
                         ?>
                         <td>
-                            <form method="post" action="proses-verifikasi.php?update=<?= $row['nim'] ?>">
-                                <input type="hidden" name="nim" value="<?= $row['nim'] ?>">
+                            <form method="post" action="proses-verifikasi.php?update=<?= $row['idPembayaran']; ?>">
+                
+                                <input type="hidden" name="idPembayaran" value="<?= $row['idPembayaran']; ?>">
                                 <input type="hidden" name="status" value="Verifikasi Sesuai">
                                 <input type="submit" class=" btn btn-sm  btn-success" value="Verifikasi" name="update">
                             </form>
                         </td>
                         <td>
-                            <form method="post" action="proses-verifikasi.php?update=<?= $row['nim'] ?>">
-                                <input type="hidden" name="nim" value="<?= $row['nim'] ?>">
+                            <form method="post" action="proses-verifikasi.php?update=<?= $row['idPembayaran']; ?>">
+                
+                                <input type="hidden" name="idPembayaran" value="<?= $row['idPembayaran']; ?>">
                                 <input type="hidden" name="status" value="Tidak Terverifikasi">
                                 <input type="submit" class=" btn btn-sm  btn-danger" value="Tidak Terverikasi" name="updateTidak">
                             </form>
                         </td>
-                        <?
+                        <?php
                             }
                         ?>
                      
@@ -110,6 +105,4 @@ require "../database/proses-sql.php";
         </table>
 
 </body>
-<?
-?>
 </html>
