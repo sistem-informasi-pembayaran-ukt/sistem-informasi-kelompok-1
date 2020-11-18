@@ -50,22 +50,19 @@ require "../database/proses-sql.php";
             ?>
                 <tbody>
                     <tr>
-                        <td><?=$inew?></td>
-                        <td><?= ($row['nim']) ?></td>
-                        <td><?= ($row['nama']) ?></td>
-                        <td><?= ($row['bukti']) ?>
+                        <td><?=$inew;?></td>
+                        <td><?= $row['nim']; ?></td>
+                        <td><?= ($row['nama']); ?></td>
+                        <td><?= ($row['bukti']); ?>
                             <br>
-                        
-                            <form method="post" action="lihat-bukti.php?show=<?= $row['bukti'] ?>">
-                                <input type="hidden" name="bukti" value="<?= $row['bukti'] ?>">
-                                <input type="hidden" name="nama" value="<?= $row['nama'] ?>">
-                                <input type="hidden" name="nim" value="<?= $row['nim'] ?>">
+                            <form method="post" action="lihat-bukti.php?show=<?= $row['bukti']; ?>">
+                                <input type="hidden" name="bukti" value="<?= $row['bukti']; ?>">
+                                <input type="hidden" name="nama" value="<?= $row['nama']; ?>">
+                                <input type="hidden" name="nim" value="<?= $row['nim']; ?>">
                                 <input type="submit" class=" btn btn-sm  btn-success" value="Lihat Bukti" name="lihatBukti">
                             </form>
-                            </td>
-
-                        
-                        <td><?= ($row['status']) ?></td>
+                        </td>
+                        <td><?= $row['status']; ?></td>
                        
                         <?php 
                             if($row['status']!= "Belum Terverifikasi"){
@@ -78,17 +75,17 @@ require "../database/proses-sql.php";
                            
                         ?>
                         <td>
-                            <form method="post" action="proses-verifikasi.php?update=<?= $row['idPembayaran'] ?>">
+                            <form method="post" action="proses-verifikasi.php?update=<?= $row['idPembayaran']; ?>">
                 
-                                <input type="hidden" name="idPembayaran" value="<?= $row['idPembayaran'] ?>">
+                                <input type="hidden" name="idPembayaran" value="<?= $row['idPembayaran']; ?>">
                                 <input type="hidden" name="status" value="Verifikasi Sesuai">
                                 <input type="submit" class=" btn btn-sm  btn-success" value="Verifikasi" name="update">
                             </form>
                         </td>
                         <td>
-                            <form method="post" action="proses-verifikasi.php?update=<?= $row['idPembayaran'] ?>">
+                            <form method="post" action="proses-verifikasi.php?update=<?= $row['idPembayaran']; ?>">
                 
-                                <input type="hidden" name="idPembayaran" value="<?= $row['idPembayaran'] ?>">
+                                <input type="hidden" name="idPembayaran" value="<?= $row['idPembayaran']; ?>">
                                 <input type="hidden" name="status" value="Tidak Terverifikasi">
                                 <input type="submit" class=" btn btn-sm  btn-danger" value="Tidak Terverikasi" name="updateTidak">
                             </form>
@@ -108,6 +105,5 @@ require "../database/proses-sql.php";
         </table>
 
 </body>
-<?
-?>
+
 </html>

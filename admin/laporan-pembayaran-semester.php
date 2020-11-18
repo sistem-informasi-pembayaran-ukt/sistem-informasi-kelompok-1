@@ -65,18 +65,18 @@ require "../database/proses-sql.php";
 
   <tbody>
     <tr>
-      <td> <?= $inew ?>.</th>
-      <td><?= ($row['nim'])?></td>
-      <td><?= ($row['nama'])?></td>
-      <td><?= ($row['namaJurusan'])?></td>
-      <td><?= ($row['namaSemester'])?></td>
-      <td><?= ($row['tanggalPembayaran'])?></td>
+      <td> <?= $inew; ?>.</th>
+      <td><?= $row['nim'];?></td>
+      <td><?= $row['nama'];?></td>
+      <td><?= $row['namaJurusan'];?></td>
+      <td><?= $row['namaSemester'];?></td>
+      <td><?= $row['tanggalPembayaran'];?></td>
     </tr>
     
   </tbody>
 </table>
 
-<?
+<?php
 $inew+=1;
   }
 }

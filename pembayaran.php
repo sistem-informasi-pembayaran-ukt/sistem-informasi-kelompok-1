@@ -44,7 +44,7 @@ require_once "proses-pembayaran.php";
                 <p>Golongan UKT :<?= dataMahasiswa('golonganUKT',$pdo);?><br>
                 <p>semester :<?= dataMahasiswa('namaSemester',$pdo);?><br>
                 <p>jurusan :<?= dataMahasiswa('namaJurusan',$pdo);?><br>
-                <p>tarif ukt :<?=dataMahasiswa('tarifUKT',$pdo);?><br>
+                <p>tarif ukt :<?= dataMahasiswa('tarifUKT',$pdo);?><br>
                 <form method="post">
                     <input class="btn btn-sm btn-success" type="submit" name="sembunyikanDetail"  value="Sembunyikan Detail" /> 
                 </form>
@@ -67,6 +67,7 @@ require_once "proses-pembayaran.php";
         </form>
 
 <?php
+
     }
 ?>      
 

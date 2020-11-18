@@ -18,27 +18,27 @@ require "../database/proses-sql.php";
   <body class="col mt-5 ml-5 mr-5">
     <h1>Laporan Pembayaran</h1>
     <form method="POST" action="">
-<h2> Pilih Jurusan </h2>
-<h4>
-  <select name="kodeJurusan">
-    <option value=1>Teknik Sipil</option>
-    <option value=2>Teknik Mesin</option>
-    <option value=3>Teknik Perkapalan</option>
-    <option value=4>Teknik Elektro</option>
-    <option value=5>Teknik Arsitektur</option>
-    <option value=6>Teknik Geologi</option>
-    <option value=7>Teknik Industri</option>
-    <option value=8>Teknik Kelautan</option>
-    <option value=9>Teknik Sistem Perkapalan</option>
-    <option value=10>Teknik Perencanaan Wilayah dan Kota</option>
-    <option value=11>Teknik Pertambangan</option>
-    <option value=12>Teknik Informatika</option>
-    <option value=13>Teknik Lingkungan</option>
+      <h2> Pilih Jurusan </h2>
+      <h4>
+        <select name="kodeJurusan">
+        <option value=1>Teknik Sipil</option>
+        <option value=2>Teknik Mesin</option>
+        <option value=3>Teknik Perkapalan</option>
+        <option value=4>Teknik Elektro</option>
+        <option value=5>Teknik Arsitektur</option>
+        <option value=6>Teknik Geologi</option>
+        <option value=7>Teknik Industri</option>
+        <option value=8>Teknik Kelautan</option>
+        <option value=9>Teknik Sistem Perkapalan</option>
+        <option value=10>Teknik Perencanaan Wilayah dan Kota</option>
+        <option value=11>Teknik Pertambangan</option>
+        <option value=12>Teknik Informatika</option>
+        <option value=13>Teknik Lingkungan</option>
 
-  </select>
-  <input class="btn btn-success" type="submit" name="submitKodeJurusan" value="Submit"/>
-</h4>
-</form>
+        </select>
+        <input class="btn btn-success" type="submit" name="submitKodeJurusan" value="Submit"/>
+      </h4>
+    </form>
 
     <table class="table mr-5">
     <thead class="thead-dark">
@@ -63,19 +63,19 @@ require "../database/proses-sql.php";
 
   <tbody>
     <tr>
-      <td> <?= $inew ?>.</th>
-      <td><?= ($row['nim'])?></td>
-      <td><?= ($row['nama'])?></td>
-      <td><?= ($row['namaJurusan'])?></td>
-      <td><?= ($row['namaSemester'])?></td>
-      <td><?= ($row['tanggalPembayaran'])?></td>
+      <td> <?= $inew; ?>.</th>
+      <td><?= $row['nim'];?></td>
+      <td><?= $row['nama'];?></td>
+      <td><?= $row['namaJurusan'];?></td>
+      <td><?= $row['namaSemester'];?></td>
+      <td><?= $row['tanggalPembayaran'];?></td>
     </tr>
     
   </tbody>
 </table>
  
 
-<?
+<?php
 $inew+=1;
   }
 }
