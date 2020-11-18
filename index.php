@@ -24,7 +24,7 @@ include "navbar.php";
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
             <h1 class="display-4">UNIVERSITAS HASANUDDIN</h1>
-            <p class="lead">Selamat Datang di Website Sistem Informasi Pembayaran UKT. <br> Departemen Teknik Informatika. Universitas Hasanuddin.</p>
+            <p class="lead">Selamat Datang di Website Sistem Informasi Pembayaran UKT. <br> Fakultas Teknik. Universitas Hasanuddin.</p>
        </div>
     </div>
     <div class="row">

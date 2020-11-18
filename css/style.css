@@ -3,32 +3,6 @@
     color: white;
 }
 
-
-/*
-.nav-item {
-    width: 100px;
-    padding: 5px 0!important;
-    border: 1px solid rgb(119, 2, 2);
-    position: relative;
-    overflow: hidden;
-}
-
-.nav-item::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(120deg, transparent, rgba(255, 255, 255, .3), transparent);
-    transition: all 650ms;
-}
-
-.nav-item:hover::before {
-    left: 100%;
-}
-*/
-
 .nav-item {
     margin: 0 20px;
 }

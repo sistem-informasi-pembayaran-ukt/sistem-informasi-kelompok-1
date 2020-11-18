@@ -65,7 +65,7 @@ require_once "proses-pembayaran.php";
             <input class="btn btn-sm btn-success" type="submit" value="Submit" name="submit">
         </form>
 
-<?
+<? php
     }
 ?>      
 

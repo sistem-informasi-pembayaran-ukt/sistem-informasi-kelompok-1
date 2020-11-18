@@ -19,7 +19,7 @@
                         <a class="nav-link js-scroll-trigger text-white" href="contact.php">Kontak</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger text-white" href="proses-pembayaran.php">Pembayaran</a>
+                        <a class="nav-link js-scroll-trigger text-white" href="pembayaran.php">Pembayaran</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link js-scroll-trigger text-white" href="profile.php">Profile</a>
