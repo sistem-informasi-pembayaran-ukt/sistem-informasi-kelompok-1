@@ -65,15 +65,11 @@ require_once "proses-pembayaran.php";
             <input type="hidden" value="<?php echo date("Y-m-d");?>" name="tanggal">
             <input class="btn btn-sm btn-success" type="submit" value="Submit" name="submit">
         </form>
-
-<<<<<<< HEAD
-<? php
-=======
+        
 <?php
 
->>>>>>> ff21afd45d259bf8f844ab1bbea6380631a5bc10
-    }
-?>      
+}
+?>    
 
 </body>
 </html>

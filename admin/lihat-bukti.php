@@ -1,7 +1,3 @@
-<?php
-require "../database/proses-sql.php";
-if(isset($_POST['lihatBukti'])){
-    ?>
 <!doctype html>
 <html lang="en">
 
@@ -16,16 +12,18 @@ if(isset($_POST['lihatBukti'])){
 </head>
 <body class="col mt-5 ml-5 mr-5">
     <h1>Gambar Bukti</h1>
-    <?
-        if(isset($_POST['nama'])&& isset($_POST['nim'])&&isset($_POST['bukti'])){
+    <?php
+        require "../database/proses-sql.php";
+        if(isset($_POST['lihatBukti'])) {
+            if(isset($_POST['nama'])&& isset($_POST['nim'])&&isset($_POST['bukti'])){
     ?>
             <h1>Bukti Pembayaran dari <?=$_POST['nama'];?></h1>
             <img src="../gambar-bukti/<?= $_POST['bukti']; ?> "/>
             <br>
             <button onclick="window.location.href='verifikasi-pembayaran.php'" class="btn btn-lg btn-success mt-5">Close Preview</button>
-<?php
-}}
-?>
-    
+        <?php
+            }
+        }
+        ?>
     </body>
 </html>

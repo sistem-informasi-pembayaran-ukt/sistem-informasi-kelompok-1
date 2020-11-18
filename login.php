@@ -71,7 +71,10 @@
 			</div>
 			<div class="card-footer">
 				<div class="d-flex justify-content-center links">
-					Don't have an account?<a href="register.php">Register</a>
+					Belum punya akun?<a href="register.php">Register</a>
+				</div>
+				<div class="d-flex justify-content-center links">
+					Login sebagai admin?<a href="admin/login.php">Click disini</a>
 				</div>
 			</div>
 		</div>

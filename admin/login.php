@@ -26,27 +26,33 @@
 			</div>
 			<div class="card-body">
 			<?php
-				require_once "../database/pdo.php";
-				session_start();
-				if (isset($_POST['login'])) {
-					if (!empty(trim($_POST['username'])) && !empty(trim($_POST['password']))) {
-						$user = $_POST['username'];
-						$pass = $_POST['password'];
-						$stmt = $pdo->prepare("SELECT * FROM admin WHERE username = '$user' AND password = '$pass'");
-						$stmt->execute(array(
-							$user     =>     $_POST["username"],
-							$pass     =>     $_POST["password"]
-						));
-						$username = $stmt->fetch(PDO::FETCH_ASSOC);
-						$_SESSION["username"] = $username;
+				require_once "../database/pdo.php"; //koneksi db
+				session_start(); //memulai session
+				if (isset($_POST['login'])) //mengecek jika tombol masuk ditekan
+				 {
+					if (!empty(trim($_POST['username'])) && !empty(trim($_POST['password']))) //mengecek apabila tdk kosong
+					 {
+						$user = $_POST['username']; // isi variabel dengan mengambil data username pada form
+						$pass = $_POST['password']; // isi variabel dengan mengambil data password pada form
+						$stmt = $pdo->prepare("SELECT * FROM admin WHERE username = '$user' AND password = '$pass'"); //menyiapkan query select
+						$stmt->execute();//menjalankan query
+						$count = $stmt->rowCount();
+						if($count > 0) {
+            $idAdmin = $stmt->fetch();
+            $_SESSION['idAdmin'] = $idAdmin;
             header("location:admin.php");
-					}
-					else {
+    				} else {
 						?>
-						<div class="alert alert-danger" role="alert">Failed to login, please fill out all the field!</div>
+						<div class="alert alert-danger" role="alert">Failed to login, please check your username or password again!</div>
 						<?php
 					}
 				}
+				else {
+					?>
+					<div class="alert alert-danger" role="alert">Failed to login, please fill out all the field!</div>
+					<?php
+				}
+			}
 				?>
 				<form action="login.php" method="post">
 					<div class="input-group form-group">

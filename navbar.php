@@ -9,7 +9,7 @@
                 <ul class="navbar-nav ml-auto">
                    <!-- Shown Navbar if user has logged in -->
                 <?php
-                require_once "database/pdo.php";
+                require_once "database/pdo.php"; //koneksi db
                 if (isset($_SESSION['nim'])) {
                 ?>
                     <li class="nav-item">
@@ -30,7 +30,7 @@
             </ul>
             <!-- Shown Navbar if user hasn't logged in -->
         <?php
-        } else if (!isset($_SESSION['username'])) {
+        } else if (!isset($_SESSION['nim'])) {
         ?>
             <li class="nav-item">
                 <a class="nav-link js-scroll-trigger text-white" href="login.php">Login <span class="sr-only">(current)</span></a>

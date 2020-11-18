@@ -30,15 +30,18 @@
 			<div class="card-body">
 		<form action="register.php" method="post">
 		<?php
-            require_once "database/pdo.php";
-            $message = '';
-            if (isset($_POST['register'])) {
-								if (!empty(trim($_POST['nim'])) && !empty(trim($_POST['password'])) && !empty(trim($_POST['name']) 
+            require_once "database/pdo.php"; //koneksi db
+						if (isset($_POST['register'])) //mengecek jika button submit ditekan
+						{
+							/*Mengecek jika seluruh kolom tidak kosong dan menghapus ketidaksengajaan spasi di awal kolom */
+								if (!empty(trim($_POST['nim'])) && !empty(trim($_POST['password'])) && !empty(trim($_POST['name'])) 
 								&& !empty(trim($_POST['address'])) && !empty(trim($_POST['phonenum'])) && !empty(trim($_POST['department']))
-								&& !empty(trim($_POST['semester'])) && !empty(trim($_POST['ukt'])))) {
+								&& !empty(trim($_POST['semester'])) && !empty(trim($_POST['ukt']))) {
+									/*menyiapkan query hasil inputan user ke db */
                     $sql = "INSERT INTO mahasiswa (nim,password,nama,alamat,noTelp,kodeJurusan,kodeSemester,golonganUKT) 
                       VALUES (:nim, :password, :nama, :alamat, :noTelp, :kodeJurusan, :kodeSemester, :golonganUKT)";
-                    $stmt = $pdo->prepare($sql);
+										$stmt = $pdo->prepare($sql);
+										/*Eksekusi Query */
                     $stmt->execute(array(
                       ':nim' => $_POST['nim'],
                       ':password' => password_hash($_POST['password'], PASSWORD_DEFAULT),
@@ -49,11 +52,11 @@
                       ':kodeSemester' => $_POST['semester'],
                       ':golonganUKT' => $_POST['ukt'],
                     ));
-                    header("location:login.php");
-								}
-								else {
+                    header("location:login.php"); //stlh berhasil, redirect ke login.php
+								} //tampilan pesan eror jika tidak sesuai atau field ada yg kosong
+								else { 
 									?>
-									<div class="alert alert-danger" role="alert">Failed to Register, All field are require!</div>
+									<div class="alert alert-danger" role="alert">Failed to Register, All field are require!</div> 
 									<?php
 						}		
         }
@@ -70,6 +73,7 @@
 						</div>
 						<input type="password" type="password" class="form-control" name="password" id="password" placeholder="Password">
 						<div class="input-group">
+						<!--js untuk menampilkan/menyembunyikan pass-->
 							<input type="checkbox" onclick="showPassword()"> Show/Hide Password
 						</div>
 					</div>
@@ -98,10 +102,10 @@
   					<select class="custom-select" id="department" name="department">
 						<option>--- Pilih Departemen ---</option>
                 <?php
-                $sql = "SELECT * FROM jurusan";
-                $stmt = $pdo->prepare($sql); 
-                $stmt->execute();
-                $stmt->setFetchMode(PDO::FETCH_ASSOC);
+                $sql = "SELECT * FROM jurusan"; 
+                $stmt = $pdo->prepare($sql); //menyiapkan query hasil select
+                $stmt->execute(); //menjalankan query
+                $stmt->setFetchMode(PDO::FETCH_ASSOC); //memetakan
                 ?>
                 <?php
                   foreach($stmt->fetchAll() as $k=>$r){

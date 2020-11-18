@@ -7,17 +7,20 @@
       <li class="nav-item active">
         <a class="nav-link" href="admin.php">Beranda <span class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#">Daftar Mahasiswa</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="laporan-pembayaran-semester.php">Laporan Pembayaran</a>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Laporan Pembayaran
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="laporan-pembayaran-semester.php">Per semester</a>
+          <a class="dropdown-item" href="laporan-pembayaran-jurusan.php">Per jurusan</a>
+        </div>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="verifikasi-pembayaran.php">Verifikasi Pembayaran</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="lihat-bukti">Foto Bukti</a>
+        <a class="nav-link" href="lihat-bukti.php">Gambar Bukti</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="logout.php">Logout</a>

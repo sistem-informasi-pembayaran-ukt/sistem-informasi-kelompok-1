@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Numans');
 
 html,body{
-background-image: url('http://getwallpapers.com/wallpaper/full/a/5/d/544750.jpg');
+background-image: url('https://cdn2.tstatic.net/makassar/foto/bank/images2/fakultas-teknik-universitas-hasanuddin-r.jpg');
 background-size: cover;
 background-repeat: no-repeat;
 height: 100%;
@@ -27,7 +27,7 @@ color: white;
 
 .input-group-prepend span{
 width: 50px;
-background-color: #FFC312;
+background-color: #edeef7;
 color: black;
 border:0 !important;
 }
@@ -41,7 +41,7 @@ box-shadow: 0 0 0 0 !important;
 .login_btn{
 color: black;
 font-weight: bold;
-background-color: #FFC312;
+background-color: #edeef7;
 width: 100px;
 }
 
