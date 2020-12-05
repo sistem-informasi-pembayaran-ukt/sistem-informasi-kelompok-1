@@ -13,14 +13,14 @@ require "../database/proses-sql.php";
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 
-    <title>Pembayaran</title>
+    <title>Verifikasi Pembayaran</title>
 </head>
 <?php
-/*  if (!isset($_SESSION['idadmin'])){
+if (!isset($_SESSION['idAdmin'])){
     //Tampilan maaf halaman ini tidak bisa diakses
         echo "<h3>Maaf Halaman Ini Tidak Bisa Diakses";
 }
-    else {*/
+    else {
         
         $rows=dataPembayaran($pdo);
         
@@ -52,8 +52,8 @@ require "../database/proses-sql.php";
                     <tr>
                         <td><?=$inew;?></td>
                         <td><?= $row['nim']; ?></td>
-                        <td><?= ($row['nama']); ?></td>
-                        <td><?= ($row['bukti']); ?>
+                        <td><?= $row['nama']; ?></td>
+                        <td><?= $row['bukti']; ?>
                             <br>
                             <form method="post" action="lihat-bukti.php?show=<?= $row['bukti']; ?>">
                                 <input type="hidden" name="bukti" value="<?= $row['bukti']; ?>">
@@ -100,7 +100,7 @@ require "../database/proses-sql.php";
             
             <?php
             $inew+=1;
-            }
+            }}
             ?>
         </table>
 

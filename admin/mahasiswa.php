@@ -15,11 +15,11 @@ require_once "../database/pdo.php";
     <title>Pembayaran</title>
 </head>
 <?php
-/*  if (!isset($_SESSION['idadmin'])){
+if (!isset($_SESSION['idAdmin'])){
     //Tampilan maaf halaman ini tidak bisa diakses
         echo "<h3>Maaf Halaman Ini Tidak Bisa Diakses";
 }
-    else {*/
+    else {
         
         $rows=dataPembayaran($pdo);
         
@@ -99,7 +99,7 @@ require_once "../database/pdo.php";
             
             <?php
             $inew+=1;
-            }
+            }}
             ?>
         </table>
 

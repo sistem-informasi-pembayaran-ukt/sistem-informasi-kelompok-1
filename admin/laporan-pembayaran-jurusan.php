@@ -1,6 +1,11 @@
 <?php
 require_once "../database/pdo.php";
 require "../database/proses-sql.php";
+if (!isset($_SESSION['idAdmin'])){
+  //Tampilan maaf halaman ini tidak bisa diakses
+      echo "<h3>Maaf Halaman Ini Tidak Bisa Diakses";
+}
+  else {
 ?>
 <!doctype html>
 <html lang="en">
@@ -78,7 +83,7 @@ require "../database/proses-sql.php";
 <?php
 $inew+=1;
   }
-}
+}}
   ?>
   </body>
 </html>

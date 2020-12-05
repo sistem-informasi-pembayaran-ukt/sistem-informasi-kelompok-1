@@ -11,6 +11,13 @@
     <title>Pembayaran</title>
 </head>
 <body class="col mt-5 ml-5 mr-5">
+    <?php 
+if (!isset($_SESSION['idAdmin'])){
+    //Tampilan maaf halaman ini tidak bisa diakses
+        echo "<h3>Maaf Halaman Ini Tidak Bisa Diakses";
+}
+    else {
+    ?>
     <h1>Gambar Bukti</h1>
     <?php
         require "../database/proses-sql.php";
@@ -23,7 +30,7 @@
             <button onclick="window.location.href='verifikasi-pembayaran.php'" class="btn btn-lg btn-success mt-5">Close Preview</button>
         <?php
             }
-        }
+        }}
         ?>
     </body>
 </html>

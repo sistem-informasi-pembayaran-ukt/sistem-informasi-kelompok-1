@@ -22,6 +22,11 @@
 
 <body>
 <?php 
+    if (!isset($_SESSION['idAdmin'])){
+        //Tampilan maaf halaman ini tidak bisa diakses
+            echo "<h3>Maaf Halaman Ini Tidak Bisa Diakses";
+    }
+        else {
     include "navbar.php";
 ?>
     <!-- MAIN -->
@@ -29,6 +34,9 @@
         <h1>Hello Admin</h1>
     </div>
 </div>
+<?php
+        }
+        ?>
 </body>
 
 </html>
