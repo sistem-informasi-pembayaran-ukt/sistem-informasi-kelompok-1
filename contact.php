@@ -31,33 +31,35 @@ session_start()
 <?php
 include "navbar.php";
 ?>
+<section class="section-page sc-about-maps">
 <div class="container">
-<div id="maps"><h1>Peta Kampus</h1></div>
-<div class="box">
-<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15892.832806807173!2d119.49358618589373!3d-5.229958239582035!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dbee72aa2cfa7b5%3A0x6866705455cbe08e!2sFAKULTAS%20TEKNIK%20UNHAS!5e0!3m2!1sid!2sid!4v1605549649721!5m2!1sid!2sid" width="750" height="500" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+<div class="section-title">
+<h3>Peta Kampus</h3>
 </div>
-
+<div class="about-map">
+<iframe marginheight="0" marginwidth="0"  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15892.832806807173!2d119.49358618589373!3d-5.229958239582035!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dbee72aa2cfa7b5%3A0x6866705455cbe08e!2sFAKULTAS%20TEKNIK%20UNHAS!5e0!3m2!1sid!2sid!4v1605549649721!5m2!1sid!2sid" width="100%" height="100%" frameborder="0"></iframe>
+</div>
 <div class="row">
     <div class="col-sm-6 bg-transparent pt-5 pb-5">
-    Kampus 2 
+   <b>Kampus 2</b> 
     <br> <i class="fas fa-map-marker-alt"></i> Jalan Poros Malino Km.6, Bontomarannu. </i> <br>  Gowa, Sulawesi Selatan. 92171 <br> <i class="far fa-envelope"> teknik@unhas.ac.id</i>
     </div>
     <div class="col-sm-6 bg-transparent pt-5 pb-5 text-center  d-flex align-item-center">
-    <a href="https://www.instagram.com/hasanuddin_univ/"><i class="fab fa-instagram mr-4"></i></a>
-    <a href="https://web.facebook.com/hasanuddin.university/?_rdc=1&_rdr"><i class="fab fa-facebook-f mr-4"></i></a>
-    <a href="https://unhas.ac.id/en"><i class="far fa-envelope mr-4"></i></a>
-    <a href="#"><i class="fab fa-twitter mr-4"></i></a>
+    <a href="https://www.instagram.com/hasanuddin_univ/"><i class="fa-2x fab fa-instagram m-4"></i></a>
+    <a href="https://web.facebook.com/hasanuddin.university/?_rdc=1&_rdr"><i class="fa-2x fab fa-facebook-f m-4"></i></a>
+    <a href="https://unhas.ac.id/en"><i class="fa-2x far fa-envelope m-4"></i></a>
+    <a href="#"><i class="fa-2x fab fa-twitter m-4"></i></a>
     </div>
 </div>
+     
 </div>
-
-
-    <div class="footer-copyright text-center py-3">
+</section>
+<div class="footer-copyright text-center py-3">
         <a>&copy; Copyright
             <a href="#">unhas.com</a>
         </a>
         <br>Designed By Group 1</br>
-    </div>
+    </div>   
 </body>
 
 <!-- JQuery -->

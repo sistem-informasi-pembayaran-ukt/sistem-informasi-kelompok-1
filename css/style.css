@@ -68,7 +68,9 @@
 img {
     height: 250px;
 }
-
+h6{
+    font-weight:bold;
+}
 .container {
     display: block;
     align-items: center;

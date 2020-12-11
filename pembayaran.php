@@ -18,6 +18,7 @@ require_once "proses-pembayaran.php";
 </head>
 
 <body class="col mt-5 ml-5 mr-5">
+
 <?php
     if (!isset($_SESSION['nim'])){
         //Tampilan maaf halaman ini tidak bisa diakses
@@ -37,7 +38,7 @@ require_once "proses-pembayaran.php";
         }
         else {
             if ( isset($_SESSION['nim']) ) {
-          
+        
 ?>
                 <p>Nama : <?= dataMahasiswa('nama',$pdo);?></p>
                 <p>NIM :<?= dataMahasiswa('nim',$pdo);?></p>

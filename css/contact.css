@@ -32,26 +32,20 @@
 .nav-link:hover::before {
     transform: scaleX(1)
 }
-
-
 .container {
     position: relative;
     margin: 0 auto;
 }
-
 .container img {
     height: 50px;
-}
-
-#parag {
-    margin-top: 700px;
 }
 
 .box {
     position: absolute;
     padding: auto;
-    margin-left: 190px;
-    margin-top: 50px;
+    margin-top:100px;
+    margin-left:100px;
+    margin-right:100px;
 }
 
 .footer-copyright {
@@ -66,11 +60,17 @@ hr {
     border-radius: 0px;
 }
 .row{
-    margin-top: 600px;
     background-color:white;
+    font-size:20px;
 }
 .col-sm-6{
     margin:0 auto;
+}
+.fab{
+    height:50px;
+}
 
-    
+.about-map{
+    margin-top:100px;
+    height:500px;
 }
