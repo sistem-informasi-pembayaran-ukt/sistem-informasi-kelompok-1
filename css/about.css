@@ -68,22 +68,37 @@
     .container p {
         padding: 15px;
         text-align: justify;
+        font-size:20px;
     }
-    
+    .display-4{
+        text-align:left;
+        margin-top:300px;
+        color:white;
+        font-size:30px;
+        
+    }
     .row img {
         height: 50%;
-    }
-    
-    .jumbotron {
-        background: linear-gradient(rgba(133, 59, 59, 0), rgba(133, 59, 59, 0)), url("../img/tamlan.jpg")center no-repeat;
-        display: block;
-        align-items: center;
-        justify-content: center;
-        padding-left: 20px;
-        height: 1000px;
     }
     
     .footer-copyright {
         background-color: rgb(119, 2, 2);
         color: white;
     }
+    .jumbotron{
+        background:  url("../img/direktorat.jpg")center no-repeat;
+    background-size: cover;
+    position: relative;
+    height: 700px;
+    margin-top: -120px;
+    }
+     
+     .row{
+         text-align:center;
+     }
+     .youtube{
+         margin-left:170px;
+          display: block;
+        align-items: center;
+        justify-content: center;
+     }

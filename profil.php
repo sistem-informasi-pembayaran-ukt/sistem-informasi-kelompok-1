@@ -25,6 +25,7 @@ $golonganUKT=$ambildata['tarifUKT'];
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="css/profil.css">
   <!--Fontawesome-->
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 	<!--Custom styles-->
@@ -35,11 +36,15 @@ $golonganUKT=$ambildata['tarifUKT'];
 	<script src="js/alert.js"></script>
 </head>
 <body>
-<h1>Profil Anda</h1>
+<?php
+include "navbar.php";
+?>
+<div class="container">
+<h1>Profile</h1>
 <div class="profile">
   <div class="data">
     <p class="field">NIM
-    <p class="showdata text-gray"><?php echo $nim?></p>
+    <p class="showdata text-gray"><?php echo $nim?>
   </div>
   <div class="data">
     <p class="field">Nama
@@ -70,5 +75,7 @@ $golonganUKT=$ambildata['tarifUKT'];
     <input type="submit" class="btn btn-success btn-lg" value="Edit Profil" name="edit" />
     <input type="hidden" name="nim" value="<?=$_SESSION['nim']?>">
 </form>
+</div>
+
 </body>
 </html>
