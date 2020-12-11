@@ -37,7 +37,7 @@ include "navbar.php";
         if (!isset($_POST['detail']) || isset($_POST['sembunyikanDetail'])){
 ?> 
             <form method="post">
-                <input class="btn btn-sm btn-success" type="submit" name="detail"  value="Tampilkan Detail" /> 
+                <input class="btn btn-sm" type="submit" name="detail"  value="Tampilkan Detail" /> 
             </form>
 <?php
         }
@@ -59,7 +59,7 @@ include "navbar.php";
         }
     
 ?>
-        <h6>Jika data anda sudah sesuai, silahkan lanjutkan untuk pelaporan pembayaran</h6>
+    <br>    <h6>Jika data anda sudah sesuai, silahkan lanjutkan untuk pelaporan pembayaran</h6>
         <hr>
         <form method="post" class="inner-login" action="proses-pembayaran.php" enctype="multipart/form-data">
        
@@ -69,7 +69,7 @@ include "navbar.php";
                 <input type="file" name="bukti"accept="*/image" >
             </div>
             <input type="hidden" value="<?php echo date("Y-m-d");?>" name="tanggal">
-            <input class="btn btn-sm btn-success" type="submit" value="Submit" name="submit">
+            <input class="btn btn-sm" type="submit" value="Submit" name="submit">
         </form>
         
 <?php

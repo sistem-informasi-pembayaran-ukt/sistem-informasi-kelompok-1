@@ -95,8 +95,8 @@ if (isset($_POST['edit']) ){
                   }
                 ?>
             </select> <br><br>
-        <input type="submit" class="btn btn-primary" value="Update" name="update"/>
-        <input type="submit" class="btn btn-primary"value="Cancel" name="cancel"/>
+        <input type="submit" class="btn " value="Update" name="update"/> <br>
+        <input type="submit" class="btn "value="Cancel" name="cancel"/>
       </form>
     </div>
   <?php

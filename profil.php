@@ -72,7 +72,7 @@ include "navbar.php";
   </div>
 </div>
 <form action="edit-profil.php?edit=<?php echo $_SESSION['nim'];?>" method="post">
-    <input type="submit" class="btn btn-success btn-lg" value="Edit Profil" name="edit" />
+    <input type="submit" class="btn btn-lg" value="Edit Profil" name="edit" />
     <input type="hidden" name="nim" value="<?=$_SESSION['nim']?>">
 </form>
 </div>
