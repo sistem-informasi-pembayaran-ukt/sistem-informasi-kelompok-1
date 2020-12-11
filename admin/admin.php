@@ -19,10 +19,8 @@
     <!-- Title -->
     <title>Admin</title>
 </head>
-
 <body>
 <?php 
-   
     include "navbar.php";
 ?>
     <!-- MAIN -->
@@ -32,5 +30,4 @@
 </div>
 
 </body>
-
 </html>
