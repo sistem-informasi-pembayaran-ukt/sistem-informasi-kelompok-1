@@ -20,9 +20,6 @@
         <a class="nav-link" href="verifikasi-pembayaran.php">Verifikasi Pembayaran</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="lihat-bukti.php">Gambar Bukti</a>
-      </li>
-      <li class="nav-item">
         <a class="nav-link" href="logout.php">Logout</a>
       </li>
     </ul>

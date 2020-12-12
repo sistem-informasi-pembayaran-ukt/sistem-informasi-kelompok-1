@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css?family=Numans');
+
+html,body{
+
+font-family: 'Numans', sans-serif;
+}
+nav{
+	display: flex;
+	background-color: rgb(180,78,232);
+	justify-content: space-around;
+	padding: 20px 0;
+}
+nav ul {
+	display: flex;
+	list-style: none;
+	width: 900%;
+	justify-content: space-around;
+}
+.jumbotron {
+    background: linear-gradient(rgba(15, 17, 20, 0.938), rgba(13, 28, 48, 0.678)), url("../img/koffte.jpg")center no-repeat;
+    background-size: cover;
+    position: relative;
+    height: 660px;
+}
+
+.jumbotron .display-4 {
+    color: white;
+    margin-top: 200px;
+    font-size: 50px;
+}
+
+.lead {
+    font-size: 20px;
+}
+
+.jumbotron p {
+    color: white;
+    text-align: left;
+}

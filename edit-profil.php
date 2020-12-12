@@ -14,6 +14,7 @@ session_start();
 
     $sql = "UPDATE mahasiswa SET nim = '$nim', nama = '$nama' , alamat = '$alamat', noTelp = '$noTelp', kodeJurusan= '$kodeJurusan', kodeSemester='$kodeSemester', golonganUKT='$golonganUKT' WHERE nim = '$session_nim'";
     $stmt = $pdo->prepare($sql);
+    $stmt -> execute();
   }
 ?>
 <!DOCTYPE html>
@@ -60,7 +61,7 @@ if (isset($_POST['edit']) ){
     <div class="outter-form-login">
       <form method="post" class="inner-login" action="profil.php?update=<?php echo $nim?> ">
         <p>Nama
-<input type="text" name="nama" class="form-control col-4" value="<?php echo $nama;?>">  
+        <input type="text" name="nama" class="form-control col-4" value="<?php echo $nama;?>">  
         <p>Alamat
         <input type="text" name="alamat" class="form-control" size="40" value="<?php echo $alamat;?>"></p>
         <p>No Telepon
@@ -95,8 +96,9 @@ if (isset($_POST['edit']) ){
                   }
                 ?>
             </select> <br><br>
-        <input type="submit" class="btn " value="Update" name="update"/> <br>
-        <input type="submit" class="btn "value="Cancel" name="cancel"/>
+        <input type="submit" class="btn " value="Update" name="update"/> 
+        <br>
+        <input type="submit" class="btn " value="Cancel" name="cancel"/>
       </form>
     </div>
   <?php
@@ -104,6 +106,5 @@ if (isset($_POST['edit']) ){
   }
   ?>  
 </div>
-
 </body>
 </html>
