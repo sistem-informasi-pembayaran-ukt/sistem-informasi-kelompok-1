@@ -31,8 +31,8 @@ if (isset($_SESSION['idAdmin'])){
 }
     else {
     ?>
-    <h1 class="text-center">Gambar Bukti</h1>
-    <hr>
+    <h1 class="text-center mt-5" style="color: white">Gambar Bukti</h1>
+
     <div class="ml-5 mr-5 mt-3">
     <?php
         require "../database/proses-sql.php";
@@ -40,12 +40,16 @@ if (isset($_SESSION['idAdmin'])){
             if(isset($_POST['nama'])&& isset($_POST['nim'])&&isset($_POST['bukti'])){
     ?>
     <div class="card mx-auto" style="width:80%">
-        <h5 class="card-header bg-dark text-center" style="color: white;">Bukti pembayaran</h5>
-         <div class="card-body" >
-            <h5 class="card-title">Berikut adalah bukti pembayaran dari <?=$_POST['nama'];?></h5>
-            <img class="mx-auto" src="../gambar-bukti/<?= $_POST['bukti']; ?> "/>
-            <br>
-            <button onclick="window.location.href='verifikasi-pembayaran.php'" class="btn btn-lg btn-success mt-5">Close Preview</button>
+        <h5 class="card-header  bg-dark text-center" style="color: white;">Bukti pembayaran</h5>
+         <div class="card-body">
+            <h5 class="card-title text-center">Berikut adalah bukti pembayaran dari <?=$_POST['nama'];?></h5>
+            <div class="row justify-content-center">
+            <img class="align-item" src="../gambar-bukti/<?= $_POST['bukti']; ?> "/>
+            
+            </div>
+            <div class="row justify-content-center">
+            <button onclick="window.location.href='verifikasi-pembayaran.php'" class="btn btn-lg btn-success mt-5 center">Close Preview</button>
+            </div>
         </div>
     </div>
            

@@ -11,7 +11,8 @@ require "../database/proses-sql.php";
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap first, then CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link rel="stylesheet" href="../css/admin.css">
+    <link rel="stylesheet" href="side-navbar.css">
+    <link rel="stylesheet" href="admin.css">
     <!-- Fontawesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Optional JavaScript -->
@@ -37,11 +38,11 @@ if (!isset($_SESSION['idAdmin'])){
         
 ?>
 <body>
-<h3>Data Mahasiswa </h3>
-
-<div class="col mr-5">
-        <table class="table">
-            <thead class="thead-light">
+<h3 class="text-center">Data Mahasiswa </h3>
+<hr>
+    <div class="ml-5 mr-5">
+        <table class="table ">
+            <thead class="thead-dark">
                 <tr>
                     <th>No.</th>
                 <th scope="col">NIM</th>
