@@ -31,9 +31,13 @@ if (!isset($_SESSION['idAdmin'])){
    include "navbar.php";
   ?>
   <body>
-    <h1>Laporan Pembayaran</h1>
+  
+    <h1 class="text-center mt-5 "> Laporan Pembayaran</h1>
+    <hr>
+    <div class="container mt-5">
+
     <form method="POST" action="">
-      <h2> Pilih Jurusan </h2>
+      <h3> Pilih Jurusan </h3>
       <h4>
         <select name="kodeJurusan">
         <option value=1>Teknik Sipil</option>
@@ -59,7 +63,7 @@ if (!isset($_SESSION['idAdmin'])){
     $kodeJurusan= $_POST['kodeJurusan'];
     $rows=tampilDataJurusan($pdo,$kodeJurusan);
     ?>
-    <table class="table mr-5">
+    <table class="table table-hover mr-5">
     <thead class="thead-dark">
     <tr>
       <th scope="col">No.</th>

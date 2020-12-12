@@ -31,10 +31,13 @@ if (!isset($_SESSION['idAdmin'])){
    include "navbar.php";
   ?>
   <body>
+  
+    <h1 class="text-center mt-5">Laporan Pembayaran</h1>
+    <hr>
+    <div class="container mt-3 ">
     
-    <h1>Laporan Pembayaran</h1>
     <form method="POST" action="">
-<h2> Pilih Semester </h2>
+<h3> Pilih Semester </h3>
 <h4>
   <select name="kodeSemester">
     <option value=1>Semester Awal 2014/2015</option>
@@ -66,7 +69,7 @@ if (!isset($_SESSION['idAdmin'])){
     $rows=tampilDataSemester($pdo,$kodeSemester);
     ?>
 
-    <table class="table mb-0 ">
+    <table class="table table-hover mb-0 ">
       <thead class="thead-dark">
         <tr>
         <th scope="col" style="width: 3%">No.</th>
@@ -106,5 +109,6 @@ if (!isset($_SESSION['idAdmin'])){
 </form>
   <?php
   }}?>
+  </div>
 </body>
 </html>

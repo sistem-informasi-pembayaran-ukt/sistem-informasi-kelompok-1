@@ -4,7 +4,7 @@ session_start();
 
   if (isset($_POST['update'])){
     $session_nim = $_SESSION['nim'];
-    $nim=$_POST['nim'];
+    
     $nama=$_POST['nama'];
     $alamat=$_POST['alamat'];
     $noTelp=$_POST['noTelp'];
@@ -12,8 +12,9 @@ session_start();
     $kodeSemester=$_POST['kodeSemester'];
     $golonganUKT= $_POST['golonganUKT'];
 
-    $sql = "UPDATE mahasiswa SET nim = '$nim', nama = '$nama' , alamat = '$alamat', noTelp = '$noTelp', kodeJurusan= '$kodeJurusan', kodeSemester='$kodeSemester', golonganUKT='$golonganUKT' WHERE nim = '$session_nim'";
+    $sql = "UPDATE mahasiswa SET nama = '$nama' , alamat = '$alamat', noTelp = '$noTelp', kodeJurusan= '$kodeJurusan', kodeSemester='$kodeSemester', golonganUKT='$golonganUKT' WHERE nim = '$session_nim'";
     $stmt = $pdo->prepare($sql);
+    $stmt->execute();
   }
 ?>
 <!DOCTYPE html>
@@ -60,14 +61,16 @@ if (isset($_POST['edit']) ){
     <div class="outter-form-login">
       <form method="post" class="inner-login" action="profil.php?update=<?php echo $nim?> ">
         <p>Nama
-<input type="text" name="nama" class="form-control col-4" value="<?php echo $nama;?>">  
+        <input type="text" name="nama" class="form-control col-4" value="<?php echo $nama;?>">  
         <p>Alamat
         <input type="text" name="alamat" class="form-control" size="40" value="<?php echo $alamat;?>"></p>
         <p>No Telepon
         <input type="text" name="noTelp" class="form-control" value="<?php echo $noTelp;?>"></p>
         <p>Semester
         <select class="custom-select" id="semester" name="kodeSemester">
-						<option><?php echo $kodeSemester?></option>
+            <option>
+              <?php echo $kodeSemester?>
+            </option>
                 <?php
                 $sql = "SELECT * FROM semester"; 
                 $stmt = $pdo->prepare($sql); //menyiapkan query hasil select
@@ -79,9 +82,9 @@ if (isset($_POST['edit']) ){
                     echo "<option value=\"$r[kodeSemester]\">$r[namaSemester]</option>";
                   }
                 ?>
-            </select>
+        </select>
         <p>Golongan UKT
-        <select class="custom-select" id="golonganUKT" name="golonganUKT">
+            <select class="custom-select" id="golonganUKT" name="golonganUKT">
 						<option>Rp<?php echo $golonganUKT?></option>
                 <?php
                 $sql = "SELECT * FROM ukt"; 
@@ -95,7 +98,7 @@ if (isset($_POST['edit']) ){
                   }
                 ?>
             </select> <br><br>
-        <input type="submit" class="btn " value="Update" name="update"/> <br>
+        <input type="submit" class="btn" value="Update" name="update"/> <br>
         <input type="submit" class="btn "value="Cancel" name="cancel"/>
       </form>
     </div>
