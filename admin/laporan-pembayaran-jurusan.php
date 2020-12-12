@@ -66,17 +66,19 @@ if (!isset($_SESSION['idAdmin'])){
       <th scope="col">Tanggal Pembayaran</th>
     </tr>
   </thead>
+  <tbody>
 
   <?php
   if(isset($_POST['submitKodeJurusan'])){
     $kodeJurusan= $_POST['kodeJurusan'];
     $rows=tampilDataJurusan($pdo,$kodeJurusan);
  
-    $inew = 1;
+    $inew = 0;
     foreach ($rows as $row) {
+      $inew+=1;
   ?>
 
-  <tbody>
+ 
     <tr>
       <td> <?= $inew; ?>.</th>
       <td><?= $row['nim'];?></td>
@@ -85,15 +87,16 @@ if (!isset($_SESSION['idAdmin'])){
       <td><?= $row['namaSemester'];?></td>
       <td><?= $row['tanggalPembayaran'];?></td>
     </tr>
+    <?php
+
+  }?>
   </tbody>
 </table>
 <form action="cetak-jurusan.php" method="post">
     <input type="submit" class="btn btn-success btn-lg" value="Print" name="print" formtarget="_blank" />
 </form>
 <?php
-$inew+=1;
-  }
-}}
-?>
+}}?>
+
 </body>
 </html>
