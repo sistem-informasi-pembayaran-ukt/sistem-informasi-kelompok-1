@@ -34,7 +34,7 @@ if (!isset($_SESSION['idAdmin'])){
   
     <h1 class="text-center mt-5">Laporan Pembayaran</h1>
     <hr>
-    <div class="container mt-3 ">
+    <div class="ml-5 mr-5">
     
     <form method="POST" action="">
 <h3> Pilih Semester </h3>

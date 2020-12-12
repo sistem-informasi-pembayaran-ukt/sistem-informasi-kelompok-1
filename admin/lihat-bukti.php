@@ -23,7 +23,7 @@
   <?php 
    include "navbar.php";
   ?>
-  <body>
+  <body class="bg-dark">
     <?php 
 if (isset($_SESSION['idAdmin'])){
     //Tampilan maaf halaman ini tidak bisa diakses
@@ -31,16 +31,26 @@ if (isset($_SESSION['idAdmin'])){
 }
     else {
     ?>
-    <h1>Gambar Bukti</h1>
+    <h1 class="text-center">Gambar Bukti</h1>
+    <hr>
+    <div class="ml-5 mr-5 mt-3">
     <?php
         require "../database/proses-sql.php";
         if(isset($_POST['lihatBukti'])) {
             if(isset($_POST['nama'])&& isset($_POST['nim'])&&isset($_POST['bukti'])){
     ?>
-            <h1>Bukti Pembayaran dari <?=$_POST['nama'];?></h1>
-            <img src="../gambar-bukti/<?= $_POST['bukti']; ?> "/>
+    <div class="card mx-auto" style="width:80%">
+        <h5 class="card-header bg-dark text-center" style="color: white;">Bukti pembayaran</h5>
+         <div class="card-body" >
+            <h5 class="card-title">Berikut adalah bukti pembayaran dari <?=$_POST['nama'];?></h5>
+            <img class="mx-auto" src="../gambar-bukti/<?= $_POST['bukti']; ?> "/>
             <br>
             <button onclick="window.location.href='verifikasi-pembayaran.php'" class="btn btn-lg btn-success mt-5">Close Preview</button>
+        </div>
+    </div>
+           
+            
+            
         <?php
             }
         }}
