@@ -73,7 +73,7 @@ include "navbar.php";
     </tr>
     <tr>
       <th>Golongan UKT</th>
-      <td><?php echo $golonganUKT?></td>
+      <td>Rp<?php echo $golonganUKT?></td>
     </tr>
     <tr>
       <th>Nama</th>
