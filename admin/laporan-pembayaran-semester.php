@@ -100,10 +100,11 @@ if (!isset($_SESSION['idAdmin'])){
         }?>
   </tbody>
   </table>
-  <?php
-  }}?>
   <form action="cetak-semester.php" method="post">
     <input type="submit" class="btn btn-success btn-lg" value="Print" name="print" formtarget="_blank" />
+    <input type="hidden" name="kodeSemester" value="<?=$_POST['kodeSemester']?>">
 </form>
+  <?php
+  }}?>
 </body>
 </html>

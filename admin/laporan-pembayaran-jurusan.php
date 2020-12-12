@@ -54,49 +54,47 @@ if (!isset($_SESSION['idAdmin'])){
         <input class="btn btn-success" type="submit" name="submitKodeJurusan" value="Submit"/>
       </h4>
     </form>
-
+    <?php
+    if(isset($_POST['submitKodeJurusan'])){
+    $kodeJurusan= $_POST['kodeJurusan'];
+    $rows=tampilDataJurusan($pdo,$kodeJurusan);
+    ?>
     <table class="table mr-5">
     <thead class="thead-dark">
     <tr>
-      <th scope="col" style="width:3%">No.</th>
-      <th scope="col"style="width: 10%">Nim</th>
-      <th scope="col"style="width: 15%">Nama</th>
-      <th scope="col"style="width: 10%">Jurusan</th>
-      <th scope="col"style="width: 13%">Semester</th>
-      <th scope="col"style="width: 10%">Tanggal Pembayaran</th>
+      <th scope="col">No.</th>
+      <th scope="col">Nim</th>
+      <th scope="col">Nama</th>
+      <th scope="col">Jurusan</th>
+      <th scope="col">Semester</th>
+      <th scope="col">Tanggal Pembayaran</th>
     </tr>
   </thead>
+
   <tbody>
-
   <?php
-  if(isset($_POST['submitKodeJurusan'])){
-    $kodeJurusan= $_POST['kodeJurusan'];
-    $rows=tampilDataJurusan($pdo,$kodeJurusan);
- 
-    $inew = 0;
-    foreach ($rows as $row) {
-      $inew+=1;
-  ?>
-
- 
+            $inew = 0;
+            foreach ($rows as $row) {
+            $inew+=1;
+        ?>
     <tr>
-      <td style="width:3%"> <?= $inew; ?>.</th>
-      <td style="width: 10%"><?= $row['nim'];?></td>
-      <td style="width: 15%"><?= $row['nama'];?></td>
-      <td style="width: 10%"><?= $row['namaJurusan'];?></td>
-      <td style="width: 13%"><?= $row['namaSemester'];?></td>
-      <td style="width: 10%"><?= $row['tanggalPembayaran'];?></td>
-    </tr>
-    <?php
-
-  }?>
+      <td> <?= $inew; ?>.</th>
+      <td><?= $row['nim'];?></td>
+      <td><?= $row['nama'];?></td>
+      <td><?= $row['namaJurusan'];?></td>
+      <td><?= $row['namaSemester'];?></td>
+      <td><?= $row['tanggalPembayaran'];?></td>
+      </tr>
+  <?php
+  
+        }?>
   </tbody>
-</table>
-<form action="cetak-jurusan.php" method="post">
+  </table>
+  <form action="cetak-jurusan.php" method="post">
     <input type="submit" class="btn btn-success btn-lg" value="Print" name="print" formtarget="_blank" />
+    <input type="hidden" name="kodeJurusan" value="<?=$_POST['kodeJurusan']?>">
 </form>
-<?php
-}}?>
-
+  <?php
+  }}?>
 </body>
 </html>

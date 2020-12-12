@@ -1,6 +1,6 @@
 <?php
 require_once "../database/pdo.php";
-session_start();
+require_once "../database/proses-sql.php";
 $session_admin = $_SESSION['idAdmin'];
 ?>
 <!DOCTYPE html>
@@ -38,39 +38,34 @@ $session_admin = $_SESSION['idAdmin'];
           <th scope="col">Tanggal Pembayaran</th>
         </tr>
       </thead>
-  <?php    
-    $kodeJurusan= $_POST['kodeJurusan'];
+  <?php 
     if (isset($_POST['print'])) { 
-    $sql = "SELECT pembayaran.nim, pembayaran.idPembayaran, pembayaran.tanggalPembayaran, pembayaran.bukti, pembayaran.status, mahasiswa.nama,  jurusan.namaJurusan, semester.namaSemester, ukt.tarifUKT
-    FROM ((((pembayaran
-    INNER join mahasiswa on pembayaran.nim = mahasiswa.nim)
-    INNER JOIN jurusan ON mahasiswa.kodeJurusan = jurusan.kodeJurusan)
-    INNER JOIN semester ON mahasiswa.kodeSemester = semester.kodeSemester)
-    INNER JOIN ukt ON pembayaran.golonganUKT= ukt.golonganUKT)
-    WHERE pembayaran.status='Verifikasi Sesuai'";
-
-    $stmt = $pdo->query($sql);
-    $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    $inew = 1;
-     
-    foreach ($rows as $row) {
-  ?>
-      <tbody>
+      $kodeJurusan= $_POST['kodeJurusan'];
+      $rows=tampilDataJurusan($pdo,$kodeJurusan);
+    ?>
+     <tbody>
+        <?php
+            $inew = 0;
+            foreach ($rows as $row) {
+            $inew+=1;
+        ?>
+          
         <tr>
-          <td><?= $inew; ?>.</th>
-          <td><?= $row['nim'];?></td>
-          <td><?= $row['nama'];?></td>
-          <td><?= $row['namaJurusan'];?></td>
-          <td><?= $row['namaSemester'];?></td>
-          <td><?= $row['tanggalPembayaran'];?></td>
+          <td scope="col" style="width:3%"> <?= $inew; ?>.</th>
+          <td scope="col"style="width: 10%"><?= $row['nim'];?></td>
+          <td scope="col"style="width: 15%"><?= $row['nama'];?></td>
+          <td scope="col"style="width: 10%"><?= $row['namaJurusan'];?></td>
+          <td scope="col"style="width: 13%"><?= $row['namaSemester'];?></td>
+          <td scope="col"style="width: 10%"><?= $row['tanggalPembayaran'];?></td>
+
         </tr>
-      </tbody>
-    </table>
   <?php
-  $inew+=1;
-    }
-  }
-  ?>
+  
+        }?>
+  </tbody>
+  </table>
+  <?php
+  }?>
   <hr class="feature-divider">
 <script>
   window.print();
