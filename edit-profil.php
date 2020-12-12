@@ -60,7 +60,7 @@ if (isset($_POST['edit']) ){
     <div class="outter-form-login">
       <form method="post" class="inner-login" action="profil.php?update=<?php echo $nim?> ">
         <p>Nama
-        <input type="text" name="nama" class="form-control col-4" value="<?php echo $nama;?>">  
+<input type="text" name="nama" class="form-control col-4" value="<?php echo $nama;?>">  
         <p>Alamat
         <input type="text" name="alamat" class="form-control" size="40" value="<?php echo $alamat;?>"></p>
         <p>No Telepon

@@ -49,7 +49,7 @@ h1{
     color:white;
     display:block;
     width:150px;
-    height:30px;
+    height:px;
     border:none;
     font-size:15px;
     border-radius:4px;
@@ -62,4 +62,16 @@ h1{
     box-shadow: 0 15px rgb(119, 2, 2);
     color:white;
     border-radius:4px;
+}
+ hr {
+        border-color: rgb(119, 2, 2);
+        width: 100px;
+        border-width: 5px;
+        border-radius: 50px;
+        margin-left:0px;
+}
+.field-dark{
+       background: linear-gradient(to right, rgba(192,192,192,0), rgba(192,192,192,1));
+       border-radius:3px;
+        height:50px;
 }

@@ -45,12 +45,12 @@ include "navbar.php";
             if ( isset($_SESSION['nim']) ) {
         
 ?>
-                <p>Nama : <?= dataMahasiswa('nama',$pdo);?></p>
-                <p>NIM :<?= dataMahasiswa('nim',$pdo);?></p>
-                <p>Golongan UKT :<?= dataMahasiswa('golonganUKT',$pdo);?><br>
-                <p>Semester :<?= dataMahasiswa('namaSemester',$pdo);?><br>
-                <p>Jurusan :<?= dataMahasiswa('namaJurusan',$pdo);?><br>
-                <p>Tarif ukt :<?= dataMahasiswa('tarifUKT',$pdo);?><br>
+                <p>Nama &emsp; &emsp; &emsp; &emsp; :  <?= dataMahasiswa('nama',$pdo);?></p>
+                <p>NIM &emsp; &emsp; &emsp; &emsp;  &ensp;:<?= dataMahasiswa('nim',$pdo);?></p>
+                <p>Golongan UKT &emsp; :<?= dataMahasiswa('golonganUKT',$pdo);?><br>
+                <p>Semester &emsp; &emsp; &ensp; :<?= dataMahasiswa('namaSemester',$pdo);?><br>
+                <p>Departemen &emsp; &ensp; :<?= dataMahasiswa('namaJurusan',$pdo);?><br>
+                <p>Tarif ukt &emsp; &emsp; &emsp; :<?= dataMahasiswa('tarifUKT',$pdo);?><br>
                 <form method="post">
                     <input class="btn btn-sm" type="submit" name="sembunyikanDetail"  value="Sembunyikan Detail" /> 
                 </form>

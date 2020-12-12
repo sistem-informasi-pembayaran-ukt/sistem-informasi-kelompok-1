@@ -40,37 +40,33 @@ $golonganUKT=$ambildata['tarifUKT'];
 include "navbar.php";
 ?>
 <div class="container">
-<h1>Profile</h1>
-<div class="profile">
+  <div class="ant-card-body">
+    <h1>Profil</h1>
+  <div class="profile"><hr>
   <div class="data">
-    <p class="field">NIM
-    <p class="showdata text-gray"><?php echo $nim?>
+    <p class="field-dark">NIM &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; : <?php echo $nim?>
   </div>
   <div class="data">
-    <p class="field">Nama
-    <p class="showdata text-gray"><?php echo $nama?></p>
+    <p class="field">Nama &emsp; &emsp; &emsp; &emsp;  &emsp;  &emsp;:  <?php echo $nama?></p>
   </div>
   <div class="data">
-    <p class="field">Alamat
-    <p class="showdata text-gray"><?php echo $alamat?></p>
+    <p class="field-dark">Alamat &emsp; &emsp; &emsp;  &emsp; &emsp; &ensp;:  <?php echo $alamat?></p>
   </div>
   <div class="data">
-    <p class="field">Nomor Telepon
-    <p class="showdata text-gray"><?php echo $noTelp?></p>
+    <p class="field">Nomor Telepon &emsp; &emsp; &ensp; :  <?php echo $noTelp?></p>
   </div>
   <div class="data">
-    <p class="field">Jurusan
-    <p class="showdata text-gray"><?php echo $kodeJurusan?></p>
+    <p class="field-dark">Departemen &emsp; &emsp; &emsp;  &ensp;   :  <?php echo $kodeJurusan?></p>
   </div>
   <div class="data">
-    <p class="field">Semester
-    <p class="showdata text-gray"><?php echo $kodeSemester?></p>
+    <p class="field">Semester &emsp; &ensp; &emsp; &emsp; &emsp;  :  <?php echo $kodeSemester?></p>
   </div>
   <div class="data">
-    <p class="field">Golongan UKT
-    <p class="showdata text-gray">Rp<?php echo $golonganUKT?></p>
+    <p class="field-dark">Golongan UKT (Rp) &emsp; :  <?php echo $golonganUKT?></p>
   </div>
 </div>
+</div>
+
 <form action="edit-profil.php?edit=<?php echo $_SESSION['nim'];?>" method="post">
     <input type="submit" class="btn btn-lg" value="Edit Profil" name="edit" />
     <input type="hidden" name="nim" value="<?=$_SESSION['nim']?>">
