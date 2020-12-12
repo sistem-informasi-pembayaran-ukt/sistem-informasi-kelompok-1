@@ -49,7 +49,7 @@ function tampilDataSemester($pdo,$kodeSemester) {
               inner join pembayaran on mahasiswa.nim = pembayaran.nim) 
               inner join jurusan on jurusan.kodeJurusan = mahasiswa.kodeJurusan) 
               inner join semester on semester.kodeSemester = mahasiswa.kodeSemester) 
-              where pembayaran.kodeSemester=$kodeSemester";
+              where pembayaran.kodeSemester=$kodeSemester and pembayaran.status='Verifikasi Sesuai'";
         $stmt = $pdo->query($sql);
         $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
         return $rows;
@@ -60,7 +60,7 @@ function tampilDataJurusan($pdo,$kodeJurusan) {
               inner join pembayaran on mahasiswa.nim = pembayaran.nim) 
               inner join jurusan on jurusan.kodeJurusan = mahasiswa.kodeJurusan) 
               inner join semester on semester.kodeSemester = mahasiswa.kodeSemester) 
-              where mahasiswa.kodeJurusan=$kodeJurusan";
+              where mahasiswa.kodeJurusan=$kodeJurusan and pembayaran.status='Verifikasi Sesuai'";
         $stmt = $pdo->query($sql);
         $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
         return $rows;
