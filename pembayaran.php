@@ -76,7 +76,7 @@ include "navbar.php";
         </tr>
         <tr>
             <th>Tarif UKT</th>
-            <td><?= dataMahasiswa('tarifUKT',$pdo);?></td>
+            <td>Rp<?= dataMahasiswa('tarifUKT',$pdo);?></td>
         </tr>
 
     </tbody>

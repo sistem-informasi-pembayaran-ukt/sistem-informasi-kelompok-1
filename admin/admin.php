@@ -32,8 +32,5 @@ $session_idAdmin = $_SESSION['idAdmin'];
             <p class="lead">Selamat Datang Admin di Website Sistem Informasi Pembayaran UKT <br> Fakultas Teknik Universitas Hasanuddin.</p>
        </div>
     </div>
-    </div>
-</div>
-
 </body>
 </html>

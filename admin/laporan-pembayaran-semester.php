@@ -15,8 +15,7 @@ if (!isset($_SESSION['idAdmin'])){
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap first, then CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link rel="stylesheet" href="side-navbar.css">
-    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="../css/admin.css">
     <!-- Fontawesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Optional JavaScript -->
@@ -30,16 +29,14 @@ if (!isset($_SESSION['idAdmin'])){
   <?php 
    include "navbar.php";
   ?>
-  <body>
-  
-    <h1 class="text-center mt-5">Laporan Pembayaran</h1>
-    <hr>
-    <div class="ml-5 mr-5">
+  <body class="bg-dark">
     
+    <h1 class="text-center mt-5" style="color: white">Laporan Pembayaran</h1>
+    <div class="container mt-5">
     <form method="POST" action="">
-<h3> Pilih Semester </h3>
+<h2 class="mt-5" style="color: white"> Pilih Semester </h2>
 <h4>
-  <select name="kodeSemester">
+  <select style="font-size: 20px" name="kodeSemester">
     <option value=1>Semester Awal 2014/2015</option>
     <option value=2>Semester Akhir 2014/2015</option>
     <option value=3>Semester Awal 2015/2016</option>
@@ -57,7 +54,7 @@ if (!isset($_SESSION['idAdmin'])){
     <option value=15>Semester Awal 2021/2022</option>
     <option value=16>Semester Akhir 2021/2022</option>
   </select>
-  <input class="btn btn-success" type="submit" name="submitKodeSemester" value="Submit"/>
+  <input class="btn btn-primary btn-sm" type="submit" name="submitKodeSemester" value="Submit"/>
 </h4>
 </form>
 
@@ -69,15 +66,15 @@ if (!isset($_SESSION['idAdmin'])){
     $rows=tampilDataSemester($pdo,$kodeSemester);
     ?>
 
-    <table class="table table-hover mb-0 ">
-      <thead class="thead-dark">
+    <table class="table table-light table-hover mr-5">
+    <thead class="thead-light">
         <tr>
-        <th scope="col" style="width: 3%">No.</th>
-        <th scope="col" style="width: 10%">Nim</th>
-        <th scope="col" style="width: 15%">Nama</th>
-        <th scope="col" style="width: 10%">Jurusan</th>
-        <th scope="col"  style="width: 13%">Semester</th>
-        <th scope="col"  style="width: 10%">Tanggal Pembayaran</th>
+        <th scope="col">No.</th>
+        <th scope="col">Nim</th>
+        <th scope="col">Nama</th>
+        <th scope="col">Jurusan</th>
+        <th scope="col">Semester</th>
+        <th scope="col">Tanggal Pembayaran</th>
         </tr>
       
       </thead>
@@ -90,12 +87,12 @@ if (!isset($_SESSION['idAdmin'])){
         ?>
           
         <tr>
-          <td scope="col" style="width:3%"> <?= $inew; ?>.</th>
-          <td scope="col"style="width: 10%"><?= $row['nim'];?></td>
-          <td scope="col"style="width: 15%"><?= $row['nama'];?></td>
-          <td scope="col"style="width: 10%"><?= $row['namaJurusan'];?></td>
-          <td scope="col"style="width: 13%"><?= $row['namaSemester'];?></td>
-          <td scope="col"style="width: 10%"><?= $row['tanggalPembayaran'];?></td>
+          <td> <?= $inew; ?>.</th>
+          <td><?= $row['nim'];?></td>
+          <td><?= $row['nama'];?></td>
+          <td ><?= $row['namaJurusan'];?></td>
+          <td ><?= $row['namaSemester'];?></td>
+          <td ><?= $row['tanggalPembayaran'];?></td>
 
         </tr>
   <?php
@@ -104,11 +101,10 @@ if (!isset($_SESSION['idAdmin'])){
   </tbody>
   </table>
   <form action="cetak-semester.php" method="post">
-    <input type="submit" class="btn btn-success btn-lg" value="Print" name="print" formtarget="_blank" />
+    <input type="submit" class="btn btn-primary btn-m" value="Print" name="print" formtarget="_blank" />
     <input type="hidden" name="kodeSemester" value="<?=$_POST['kodeSemester']?>">
 </form>
   <?php
   }}?>
-  </div>
 </body>
 </html>

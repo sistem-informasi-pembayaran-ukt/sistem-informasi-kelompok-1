@@ -11,8 +11,7 @@ require "../database/proses-sql.php";
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap first, then CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link rel="stylesheet" href="side-navbar.css">
-    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="../css/admin.css">
     <!-- Fontawesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Optional JavaScript -->
@@ -37,12 +36,12 @@ if (!isset($_SESSION['idAdmin'])){
         
         
 ?>
-<body>
-<h3 class="text-center">Data Mahasiswa </h3>
+<body class="bg-dark">
+<h3 class="text-center mt-5" style="color: white">Data Mahasiswa </h3>
 <hr>
     <div class="ml-5 mr-5">
-        <table class="table ">
-            <thead class="thead-dark">
+        <table class="table table-light table-hover mr-5">
+            <thead class="thead-light">
                 <tr>
                     <th>No.</th>
                 <th scope="col">NIM</th>
@@ -50,8 +49,6 @@ if (!isset($_SESSION['idAdmin'])){
                     <th scope="col">Bukti Pembayaran</th>
                     <th scope="col">Status</th>
                     <th scope="col">Action</th>
-                    <th></th>
-                    
                 </tr>
             </thead>
             <?php
@@ -70,7 +67,9 @@ if (!isset($_SESSION['idAdmin'])){
                                 <input type="hidden" name="bukti" value="<?= $row['bukti']; ?>">
                                 <input type="hidden" name="nama" value="<?= $row['nama']; ?>">
                                 <input type="hidden" name="nim" value="<?= $row['nim']; ?>">
-                                <input type="submit" class=" btn btn-sm  btn-success" value="Lihat Bukti" name="lihatBukti">
+                                <div class="row mx-4">
+                                <input type="submit" class=" btn btn-sm btn-primary" value="Lihat Bukti" name="lihatBukti">
+                                </div>
                             </form>
                         </td>
                         <td><?= $row['status']; ?></td>
@@ -86,21 +85,26 @@ if (!isset($_SESSION['idAdmin'])){
                            
                         ?>
                         <td>
-                            <form method="post" action="proses-verifikasi.php?update=<?= $row['idPembayaran']; ?>">
-                
-                                <input type="hidden" name="idPembayaran" value="<?= $row['idPembayaran']; ?>">
-                                <input type="hidden" name="status" value="Verifikasi Sesuai">
-                                <input type="submit" class=" btn btn-sm  btn-success" value="Verifikasi" name="update">
-                            </form>
+                            <div class="row">
+                            <div class="col">
+                                <form method="post" action="proses-verifikasi.php?update=<?= $row['idPembayaran']; ?>">
+                                    <input type="hidden" name="idPembayaran" value="<?= $row['idPembayaran']; ?>">
+                                    <input type="hidden" name="status" value="Tidak Terverifikasi">
+                                    <input type="submit" class=" btn btn-sm  btn-danger" value="Tidak Terverikasi" name="updateTidak">
+                                </form>
+                                </div>
+                                <div class="col">
+                                <form method="post" action="proses-verifikasi.php?update=<?= $row['idPembayaran']; ?>">
+                                    <input type="hidden" name="idPembayaran" value="<?= $row['idPembayaran']; ?>">
+                                    <input type="hidden" name="status" value="Verifikasi Sesuai">
+                                    <input type="submit" class=" btn btn-sm  btn-success" value="Verifikasi" name="update">
+                                </form>
+                                </div>
+
+                            </div>
+ 
                         </td>
-                        <td>
-                            <form method="post" action="proses-verifikasi.php?update=<?= $row['idPembayaran']; ?>">
-                
-                                <input type="hidden" name="idPembayaran" value="<?= $row['idPembayaran']; ?>">
-                                <input type="hidden" name="status" value="Tidak Terverifikasi">
-                                <input type="submit" class=" btn btn-sm  btn-danger" value="Tidak Terverikasi" name="updateTidak">
-                            </form>
-                        </td>
+
                         <?php
                             }
                         ?>

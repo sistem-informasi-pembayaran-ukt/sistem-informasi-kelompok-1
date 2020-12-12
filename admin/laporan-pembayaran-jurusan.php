@@ -29,16 +29,15 @@ if (!isset($_SESSION['idAdmin'])){
   <?php 
    include "navbar.php";
   ?>
-  <body>
+  <body class="bg-dark">
   
-    <h1 class="text-center mt-5 "> Laporan Pembayaran</h1>
-    <hr>
+    <h1 class="text-center mt-5" style="color: white"> Laporan Pembayaran</h1>
     <div class="container mt-5">
 
     <form method="POST" action="">
-      <h3> Pilih Jurusan </h3>
+      <h3 class="mt-5" style="color: white"> Pilih Jurusan </h3>
       <h4>
-        <select name="kodeJurusan">
+        <select style="font-size: 20px" name="kodeJurusan">
         <option value=1>Teknik Sipil</option>
         <option value=2>Teknik Mesin</option>
         <option value=3>Teknik Perkapalan</option>
@@ -54,7 +53,7 @@ if (!isset($_SESSION['idAdmin'])){
         <option value=13>Teknik Lingkungan</option>
 
         </select>
-        <input class="btn btn-success" type="submit" name="submitKodeJurusan" value="Submit"/>
+        <input class="btn btn-primary btn-sm" type="submit" name="submitKodeJurusan" value="Submit"/>
       </h4>
     </form>
     <?php
@@ -62,8 +61,8 @@ if (!isset($_SESSION['idAdmin'])){
     $kodeJurusan= $_POST['kodeJurusan'];
     $rows=tampilDataJurusan($pdo,$kodeJurusan);
     ?>
-    <table class="table table-hover mr-5">
-    <thead class="thead-dark">
+    <table class="table table-light table-hover mr-5">
+    <thead class="thead-light">
     <tr>
       <th scope="col">No.</th>
       <th scope="col">Nim</th>
@@ -94,7 +93,7 @@ if (!isset($_SESSION['idAdmin'])){
   </tbody>
   </table>
   <form action="cetak-jurusan.php" method="post">
-    <input type="submit" class="btn btn-success btn-lg" value="Print" name="print" formtarget="_blank" />
+    <input type="submit" class="btn btn-primary btn-m" value="Print" name="print" formtarget="_blank" />
     <input type="hidden" name="kodeJurusan" value="<?=$_POST['kodeJurusan']?>">
 </form>
   <?php

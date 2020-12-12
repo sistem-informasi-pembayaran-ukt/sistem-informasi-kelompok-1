@@ -12,8 +12,8 @@
         Laporan Pembayaran
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="laporan-pembayaran-semester.php">Per semester</a>
-          <a class="dropdown-item" href="laporan-pembayaran-jurusan.php">Per jurusan</a>
+          <a class="dropdown-item" href="laporan-pembayaran-semester.php">Per Semester</a>
+          <a class="dropdown-item" href="laporan-pembayaran-jurusan.php">Per Jurusan</a>
         </div>
       </li>
       <li class="nav-item">

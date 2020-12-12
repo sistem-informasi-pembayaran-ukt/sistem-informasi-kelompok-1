@@ -56,12 +56,12 @@ $session_admin = $_SESSION['idAdmin'];
         ?>
           
         <tr>
-          <td scope="col" style="width:3%"> <?= $inew; ?>.</th>
-          <td scope="col"style="width: 10%"><?= $row['nim'];?></td>
-          <td scope="col"style="width: 15%"><?= $row['nama'];?></td>
-          <td scope="col"style="width: 10%"><?= $row['namaJurusan'];?></td>
-          <td scope="col"style="width: 13%"><?= $row['namaSemester'];?></td>
-          <td scope="col"style="width: 10%"><?= $row['tanggalPembayaran'];?></td>
+        <td> <?= $inew; ?>.</th>
+          <td><?= $row['nim'];?></td>
+          <td><?= $row['nama'];?></td>
+          <td ><?= $row['namaJurusan'];?></td>
+          <td ><?= $row['namaSemester'];?></td>
+          <td ><?= $row['tanggalPembayaran'];?></td>
 
         </tr>
   <?php

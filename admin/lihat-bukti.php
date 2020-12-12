@@ -8,8 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap first, then CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link rel="stylesheet" href="side-navbar.css">
-    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="../css/admin.css">
     <!-- Fontawesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Optional JavaScript -->
@@ -48,7 +47,7 @@ if (isset($_SESSION['idAdmin'])){
             
             </div>
             <div class="row justify-content-center">
-            <button onclick="window.location.href='verifikasi-pembayaran.php'" class="btn btn-lg btn-success mt-5 center">Close Preview</button>
+            <button onclick="window.location.href='verifikasi-pembayaran.php'" class="btn btn-lg btn-primary mt-5 center">Close Preview</button>
             </div>
         </div>
     </div>

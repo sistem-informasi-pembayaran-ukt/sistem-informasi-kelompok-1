@@ -55,5 +55,10 @@ color: white;
 }
 
 .links a{
+color: white;
 margin-left: 4px;
 }
+
+.links a:hover{
+  color: rgb(226, 146, 146);
+  }
