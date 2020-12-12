@@ -58,12 +58,12 @@ if (!isset($_SESSION['idAdmin'])){
     <table class="table mr-5">
     <thead class="thead-dark">
     <tr>
-      <th scope="col">No.</th>
-      <th scope="col">Nim</th>
-      <th scope="col">Nama</th>
-      <th scope="col">Jurusan</th>
-      <th scope="col">Semester</th>
-      <th scope="col">Tanggal Pembayaran</th>
+      <th scope="col" style="width:3%">No.</th>
+      <th scope="col"style="width: 10%">Nim</th>
+      <th scope="col"style="width: 15%">Nama</th>
+      <th scope="col"style="width: 10%">Jurusan</th>
+      <th scope="col"style="width: 13%">Semester</th>
+      <th scope="col"style="width: 10%">Tanggal Pembayaran</th>
     </tr>
   </thead>
   <tbody>
@@ -80,12 +80,12 @@ if (!isset($_SESSION['idAdmin'])){
 
  
     <tr>
-      <td> <?= $inew; ?>.</th>
-      <td><?= $row['nim'];?></td>
-      <td><?= $row['nama'];?></td>
-      <td><?= $row['namaJurusan'];?></td>
-      <td><?= $row['namaSemester'];?></td>
-      <td><?= $row['tanggalPembayaran'];?></td>
+      <td style="width:3%"> <?= $inew; ?>.</th>
+      <td style="width: 10%"><?= $row['nim'];?></td>
+      <td style="width: 15%"><?= $row['nama'];?></td>
+      <td style="width: 10%"><?= $row['namaJurusan'];?></td>
+      <td style="width: 13%"><?= $row['namaSemester'];?></td>
+      <td style="width: 10%"><?= $row['tanggalPembayaran'];?></td>
     </tr>
     <?php
 
