@@ -14,11 +14,6 @@ session_start();
 
     $sql = "UPDATE mahasiswa SET nama = '$nama' , alamat = '$alamat', noTelp = '$noTelp', kodeJurusan= '$kodeJurusan', kodeSemester='$kodeSemester', golonganUKT='$golonganUKT' WHERE nim = '$session_nim'";
     $stmt = $pdo->prepare($sql);
-<<<<<<< HEAD
-    $stmt->execute();
-=======
-    $stmt -> execute();
->>>>>>> 04e0916db1228acd12cb3de84b3601a5f1591c13
   }
 ?>
 <!DOCTYPE html>
@@ -101,15 +96,15 @@ if (isset($_POST['edit']) ){
                     echo "<option value=\"$r[golonganUKT]\">Rp$r[tarifUKT]</option>";
                   }
                 ?>
-            </select> <br><br>
-<<<<<<< HEAD
-        <input type="submit" class="btn" value="Update" name="update"/> <br>
-        <input type="submit" class="btn "value="Cancel" name="cancel"/>
-=======
-        <input type="submit" class="btn " value="Update" name="update"/> 
-        <br>
-        <input type="submit" class="btn " value="Cancel" name="cancel"/>
->>>>>>> 04e0916db1228acd12cb3de84b3601a5f1591c13
+            </select>
+            <div class="row mx-5">
+              <div class="col">
+                <input type="submit" class="btn "value="Cancel" name="cancel"/> <br>
+              </div>
+              <div class="col right-block">
+                <input type="submit" class="btn" value="Update" name="update"/>
+              </div>
+         </div>
       </form>
     </div>
   <?php
