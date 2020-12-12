@@ -31,6 +31,7 @@ if (!isset($_SESSION['idAdmin'])){
    include "navbar.php";
   ?>
   <body>
+    
     <h1>Laporan Pembayaran</h1>
     <form method="POST" action="">
 <h2> Pilih Semester </h2>
@@ -57,42 +58,50 @@ if (!isset($_SESSION['idAdmin'])){
 </h4>
 </form>
 
-    <table class="table mr-5">
-    <thead class="thead-dark">
-    <tr>
-      <th scope="col">No.</th>
-      <th scope="col">Nim</th>
-      <th scope="col">Nama</th>
-      <th scope="col">Jurusan</th>
-      <th scope="col">Semester</th>
-      <th scope="col">Tanggal Pembayaran</th>
-    </tr>
-  </thead>
+
 
   <?php
   if(isset($_POST['submitKodeSemester'])){
     $kodeSemester = $_POST['kodeSemester'];
     $rows=tampilDataSemester($pdo,$kodeSemester);
- 
-    $inew = 1;
-    foreach ($rows as $row) {
-  ?>
+    ?>
 
-  <tbody>
-    <tr>
-      <td> <?= $inew; ?>.</th>
-      <td><?= $row['nim'];?></td>
-      <td><?= $row['nama'];?></td>
-      <td><?= $row['namaJurusan'];?></td>
-      <td><?= $row['namaSemester'];?></td>
-      <td><?= $row['tanggalPembayaran'];?></td>
-    </tr>
+    <table class="table mb-0 ">
+      <thead class="thead-dark">
+        <tr>
+        <th scope="col" style="width: 3%">No.</th>
+        <th scope="col" style="width: 10%">Nim</th>
+        <th scope="col" style="width: 15%">Nama</th>
+        <th scope="col" style="width: 10%">Jurusan</th>
+        <th scope="col"  style="width: 13%">Semester</th>
+        <th scope="col"  style="width: 10%">Tanggal Pembayaran</th>
+        </tr>
+      
+      </thead>
     
+      <tbody>
+        <?php
+            $inew = 0;
+            foreach ($rows as $row) {
+            $inew+=1;
+        ?>
+          
+        <tr>
+          <td scope="col" style="width:3%"> <?= $inew; ?>.</th>
+          <td scope="col"style="width: 10%"><?= $row['nim'];?></td>
+          <td scope="col"style="width: 15%"><?= $row['nama'];?></td>
+          <td scope="col"style="width: 10%"><?= $row['namaJurusan'];?></td>
+          <td scope="col"style="width: 13%"><?= $row['namaSemester'];?></td>
+          <td scope="col"style="width: 10%"><?= $row['tanggalPembayaran'];?></td>
+
+        </tr>
+  <?php
+  
+        }?>
   </tbody>
-</table>
-<?php
-$inew+=1;
-  }}}?>
+  </table>
+  <?php
+  }}?>
   <form action="cetak-semester.php" method="post">
     <input type="submit" class="btn btn-success btn-lg" value="Print" name="print" formtarget="_blank" />
 </form>

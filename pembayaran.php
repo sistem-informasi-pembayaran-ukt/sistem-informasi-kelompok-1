@@ -57,10 +57,7 @@ include "navbar.php";
             <th>Nama</th>
             <td><?= dataMahasiswa('nama',$pdo);?></td>
         </tr>
-        <tr>
-            <th>NIM</th>
-            <td><?= dataMahasiswa('nim',$pdo);?></td>
-        </tr>
+       
         <tr>
             <th>NIM</th>
             <td><?= dataMahasiswa('nim',$pdo);?></td>
