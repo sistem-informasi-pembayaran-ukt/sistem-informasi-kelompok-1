@@ -18,8 +18,8 @@ require_once "proses-pembayaran.php";
     <title>Pembayaran</title>
 </head>
 
-<body class="col mt-5 ml-5 mr-5">
-
+<body >
+<div class="container">
 <?php
 include "navbar.php";
 ?>
@@ -30,52 +30,104 @@ include "navbar.php";
     }
     else {   
 ?>
-<div class="container">
-<h1>Data Mahasiswa </h3>
+
+    <h1 class="text-center">Pembayaran</h3>
+    <div class="card mt-5">
+        <h5 class="card-header text-center" style="background-color: rgb(219, 205, 205);">Data Mahasiswa</h5>
+        <div class="card-body">
+            <p class="card-text">Data Mahasiswa yang akan dicatat di laporan pembayaran.</p>
+        </div>
 <?php   
 
         if (!isset($_POST['detail']) || isset($_POST['sembunyikanDetail'])){
 ?> 
-            <form method="post">
-                <input class="btn btn-sm" type="submit" name="detail"  value="Tampilkan Detail" /> 
-            </form>
+        <form method="post">
+            <input class="btn btn-sm ml-3 mb-5" type="submit" name="detail"  value="Tampilkan Detail" /> 
+        </form>
+            
 <?php
         }
         else {
             if ( isset($_SESSION['nim']) ) {
         
 ?>
-                <p>Nama &emsp; &emsp; &emsp; &emsp; :  <?= dataMahasiswa('nama',$pdo);?></p>
-                <p>NIM &emsp; &emsp; &emsp; &emsp;  &ensp;:<?= dataMahasiswa('nim',$pdo);?></p>
-                <p>Golongan UKT &emsp; :<?= dataMahasiswa('golonganUKT',$pdo);?><br>
-                <p>Semester &emsp; &emsp; &ensp; :<?= dataMahasiswa('namaSemester',$pdo);?><br>
-                <p>Departemen &emsp; &ensp; :<?= dataMahasiswa('namaJurusan',$pdo);?><br>
-                <p>Tarif ukt &emsp; &emsp; &emsp; :<?= dataMahasiswa('tarifUKT',$pdo);?><br>
-                <form method="post">
-                    <input class="btn btn-sm" type="submit" name="sembunyikanDetail"  value="Sembunyikan Detail" /> 
-                </form>
+        <table class="table table-hover">
+        <tbody>
+        <tr>
+            <th>Nama</th>
+            <td><?= dataMahasiswa('nama',$pdo);?></td>
+        </tr>
+        <tr>
+            <th>NIM</th>
+            <td><?= dataMahasiswa('nim',$pdo);?></td>
+        </tr>
+        <tr>
+            <th>NIM</th>
+            <td><?= dataMahasiswa('nim',$pdo);?></td>
+        </tr>
+        <tr>
+            <th>Golongan UKT </th>
+            <td><?= dataMahasiswa('golonganUKT',$pdo);?></td>
+        </tr>
+        <tr>
+            <th>Semester</th>
+            <td><?= dataMahasiswa('namaSemester',$pdo);?></td>
+        </tr>
+        <tr>
+            <th>Jurusan</th>
+            <td><?= dataMahasiswa('namaJurusan',$pdo);?></td>
+        </tr>
+        <tr>
+            <th>Tarif UKT</th>
+            <td><?= dataMahasiswa('tarifUKT',$pdo);?></td>
+        </tr>
+
+    </tbody>
+    </table>
+                
+               
+    <form method="post">
+        <input class="btn btn-sm ml-3 mb-5" type="submit" name="sembunyikanDetail"  value="Sembunyikan Detail" /> 
+    </form>
+                
+              
 <?php
             }
         }
+        
     
 ?>
-    <br>    <h6>Jika data anda sudah sesuai, silahkan lanjutkan untuk pelaporan pembayaran</h6>
-        <hr>
-        <form method="post" class="inner-login" action="proses-pembayaran.php" enctype="multipart/form-data">
-       
-                
-            <h5>Tambahkan bukti pembayaran dalam bentuk gambar ataupun pdf, maksimal ukuran 1 MB</h5>
-            <div class="form-group">
-                <input type="file" name="bukti"accept="*/image" >
-            </div>
+    </div>
+
+    <div class="alert alert-info card-title mt-5 mb-3" role="alert">
+        <h6>Pastikan data anda sudah sesuai. Lalu silahkan lanjutkan untuk pelaporan pembayaran. </h6>
+    </div>
+    <hr>
+    <div class="card mt-5 mb-5">
+        <h5 class="card-header text-center" style="background-color: rgb(219, 205, 205);">Upload Bukti Pembayaran</h5>
+        <div class="card-body">  
+            <p class="card-text">Silahkan upload bukti pembayaran dalam format pdf, jpg, jpeg, atau png dengan ukuran maksimal 1 MB</p>
+   
+        </div>
+        <form method="post" class="inner-login" action="proses-pembayaran.php" enctype="multipart/form-data">  
+            <input class="ml-3 mb-3"type="file" name="bukti"accept="*/image" > 
             <input type="hidden" value="<?php echo date("Y-m-d");?>" name="tanggal">
-            <input class="btn btn-sm" type="submit" value="Submit" name="submit">
+            <input class="btn btn-sm ml-3 mb-5" type="submit" value="Submit" name="submit">
         </form>
         
 <?php
 
 }
 ?>    
+    </div>
 </div>
+
+<div class="footer-copyright text-center py-3">
+    <p>&copy; Copyright
+        <a href="#">unhas.com</a>
+    </p>
+    <p>Designed By Group 1</p>
+</div>
+
 </body>
 </html>
