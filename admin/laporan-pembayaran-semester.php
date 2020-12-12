@@ -90,12 +90,11 @@ if (!isset($_SESSION['idAdmin'])){
     
   </tbody>
 </table>
-
 <?php
 $inew+=1;
-  }
-}}
-  ?>
-  <a href="cetak.php" target="_blank" name="print">CETAK</a>
-  </body>
+  }}}?>
+  <form action="cetak-semester.php" method="post">
+    <input type="submit" class="btn btn-success btn-lg" value="Print" name="print" formtarget="_blank" />
+</form>
+</body>
 </html>

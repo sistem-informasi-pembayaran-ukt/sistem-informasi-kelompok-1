@@ -87,11 +87,13 @@ if (!isset($_SESSION['idAdmin'])){
     </tr>
   </tbody>
 </table>
-<a href="cetak.php" target="_blank" name="print">CETAK</a>
+<form action="cetak-jurusan.php" method="post">
+    <input type="submit" class="btn btn-success btn-lg" value="Print" name="print" formtarget="_blank" />
+</form>
 <?php
 $inew+=1;
   }
 }}
-  ?>
-  </body>
+?>
+</body>
 </html>

@@ -25,7 +25,7 @@
   ?>
   <body>
     <?php 
-if (!isset($_SESSION['idAdmin'])){
+if (isset($_SESSION['idAdmin'])){
     //Tampilan maaf halaman ini tidak bisa diakses
         echo "<h3>Maaf Halaman Ini Tidak Bisa Diakses";
 }
