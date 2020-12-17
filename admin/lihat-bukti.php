@@ -20,16 +20,14 @@
     <title>Bukti Pembayaran</title>
   </head>
   <?php 
-   include "navbar.php";
-  ?>
-  <body class="bg-dark">
-    <?php 
-if (isset($_SESSION['idAdmin'])){
+  if (!isset($_SESSION['idAdmin'])){
     //Tampilan maaf halaman ini tidak bisa diakses
         echo "<h3>Maaf Halaman Ini Tidak Bisa Diakses";
 }
     else {
-    ?>
+        include "navbar.php";
+  ?>
+  <body class="bg-dark">
     <h1 class="text-center mt-5" style="color: white">Gambar Bukti</h1>
 
     <div class="ml-5 mr-5 mt-3">

@@ -73,11 +73,7 @@ include "navbar.php";
     </tr>
     <tr>
       <th>Golongan UKT</th>
-      <td>Rp<?php echo $golonganUKT?></td>
-    </tr>
-    <tr>
-      <th>Nama</th>
-      <td><?php echo $nama?></td>
+      <td>Rp<?php echo number_format($golonganUKT, 2, ",", ".");?></td>
     </tr>
 
   </tbody> 

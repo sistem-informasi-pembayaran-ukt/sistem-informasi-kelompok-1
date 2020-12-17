@@ -22,19 +22,14 @@ require "../database/proses-sql.php";
     <!-- Title -->
     <title>Verifikasi Pembayaran</title>
   </head>
-  <?php 
-   include "navbar.php";
-  ?>
 <?php
 if (!isset($_SESSION['idAdmin'])){
     //Tampilan maaf halaman ini tidak bisa diakses
         echo "<h3>Maaf Halaman Ini Tidak Bisa Diakses";
 }
     else {
-        
-        $rows=dataPembayaran($pdo);
-        
-        
+        include "navbar.php";
+        $rows=dataPembayaran($pdo);    
 ?>
 <body class="bg-dark">
 <h3 class="text-center mt-5" style="color: white">Data Mahasiswa </h3>

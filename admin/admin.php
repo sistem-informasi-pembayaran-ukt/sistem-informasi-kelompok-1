@@ -1,7 +1,11 @@
 <?php
 require_once "../database/pdo.php";
 session_start();
-$session_idAdmin = $_SESSION['idAdmin'];
+if (!isset($_SESSION['idAdmin'])){
+    //Tampilan maaf halaman ini tidak bisa diakses
+        echo "<h3>Maaf Halaman Ini Tidak Bisa Diakses";
+}
+    else {
 ?>
 <!doctype html>
 <html lang="en">
@@ -32,5 +36,8 @@ $session_idAdmin = $_SESSION['idAdmin'];
             <p class="lead">Selamat Datang Admin di Website Sistem Informasi Pembayaran UKT <br> Fakultas Teknik Universitas Hasanuddin.</p>
        </div>
     </div>
+    <?php
+    }
+    ?>
 </body>
 </html>

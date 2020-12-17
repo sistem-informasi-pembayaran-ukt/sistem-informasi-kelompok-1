@@ -3,18 +3,21 @@ require_once "database/pdo.php";
 session_start(); 
 
   if (isset($_POST['update'])){
-    $session_nim = $_SESSION['nim'];
-    
-    $nama=$_POST['nama'];
-    $alamat=$_POST['alamat'];
-    $noTelp=$_POST['noTelp'];
-    $kodeJurusan=$_POST['kodeJurusan'];
-    $kodeSemester=$_POST['kodeSemester'];
-    $golonganUKT= $_POST['golonganUKT'];
-
-    $sql = "UPDATE mahasiswa SET nama = '$nama' , alamat = '$alamat', noTelp = '$noTelp', kodeJurusan= '$kodeJurusan', kodeSemester='$kodeSemester', golonganUKT='$golonganUKT' WHERE nim = '$session_nim'";
-    $stmt = $pdo->prepare($sql);
-  }
+      $sql = "UPDATE mahasiswa SET nama = :nama, alamat=:alamat, noTelp = :noTelp, kodeSemester = :kodeSemester, golonganUKT = :golonganUKT WHERE nim = :nim ";
+      $stmt = $pdo->prepare($sql);
+      $stmt->execute(array(
+        ':nim'=> $_POST['nim'],
+        ':nama'=>$_POST['nama'],
+        ':alamat' => $_POST['alamat'],
+        ':noTelp' => $_POST['noTelp'],
+        ':kodeSemester' => $_POST['kodeSemester'],
+        ':golonganUKT' => $_POST['golonganUKT']
+      ));
+      if ($pdo){
+        echo  "<script> alert('Berhasil');</script>";
+        header("Location: profil.php");
+      }
+    }
 ?>
 <!DOCTYPE html>
 <html>
@@ -42,23 +45,30 @@ include "navbar.php";
 <div class="container">
 <?php 
 if (isset($_POST['edit']) ){
-  if ( isset($_GET['edit']) ) {
-    $session_nim = $_SESSION['nim'];
-    $sql="SELECT * FROM mahasiswa INNER JOIN jurusan ON jurusan.kodeJurusan = mahasiswa.kodeJurusan INNER JOIN semester ON semester.kodeSemester = mahasiswa.kodeSemester INNER JOIN ukt ON ukt.golonganUKT = mahasiswa.golonganUKT WHERE nim = '$session_nim'";
+  if (isset($_GET['edit'])){
+ 
+    $sql = "SELECT mahasiswa.nim, mahasiswa.nama, mahasiswa.alamat, mahasiswa.noTelp, mahasiswa.kodeSemester, jurusan.namaJurusan, semester.namaSemester, ukt.golonganUKT, ukt.tarifUKT
+            FROM (((mahasiswa
+            INNER JOIN jurusan ON mahasiswa.kodeJurusan = jurusan.kodeJurusan)
+            INNER JOIN semester ON mahasiswa.kodeSemester = semester.kodeSemester)
+            INNER JOIN ukt ON mahasiswa.golonganUKT= ukt.golonganUKT)
+            WHERE nim = :nim";
     $stmt = $pdo->prepare($sql);
-    $stmt -> execute(array('$session_nim' => $_GET['edit']));
-                    
+    $stmt -> execute(array(':nim' => $_GET['edit']));
+    
     $ambildata=$stmt->fetch();
-    $nim=$ambildata['nim'];
     $nama=$ambildata['nama'];
     $alamat=$ambildata['alamat'];
     $noTelp=$ambildata['noTelp'];
-    $kodeJurusan=$ambildata['namaJurusan'];
-    $kodeSemester=$ambildata['namaSemester'];
-    $golonganUKT=$ambildata['tarifUKT'];
+    $kodeSemester=$ambildata['kodeSemester'];
+    $namaSemester=$ambildata['namaSemester'];
+    $golonganUKT=$ambildata['golonganUKT'];
+    $tarifUKT=$ambildata['tarifUKT'];
+    $nim= $ambildata['nim'];
 ?>     
     <div class="outter-form-login">
-      <form method="post" class="inner-login" action="profil.php?update=<?php echo $nim?> ">
+      <form method="post" class="inner-login">
+        <input type="hidden" name="nim" value="<?php echo $nim;?>">
         <p>Nama
         <input type="text" name="nama" class="form-control col-4" value="<?php echo $nama;?>">  
         <p>Alamat
@@ -66,50 +76,44 @@ if (isset($_POST['edit']) ){
         <p>No Telepon
         <input type="text" name="noTelp" class="form-control" value="<?php echo $noTelp;?>"></p>
         <p>Semester
-        <select class="custom-select" id="semester" name="kodeSemester">
-            <option>
-              <?php echo $kodeSemester?>
-            </option>
-                <?php
-                $sql = "SELECT * FROM semester"; 
-                $stmt = $pdo->prepare($sql); //menyiapkan query hasil select
-                $stmt->execute(); //menjalankan query
-                $stmt->setFetchMode(PDO::FETCH_ASSOC); //memetakan
-                ?>
-                <?php
-                  foreach($stmt->fetchAll() as $k=>$r){
-                    echo "<option value=\"$r[kodeSemester]\">$r[namaSemester]</option>";
-                  }
-                ?>
+        <select class="custom-select" id="semester" name="kodeSemester">          
+          <?php
+          $sql = "SELECT * FROM semester"; 
+          $stmt = $pdo->prepare($sql); //menyiapkan query hasil select
+          $stmt->execute(); //menjalankan query
+          $stmt->setFetchMode(PDO::FETCH_ASSOC); //memetakan
+          foreach($stmt->fetchAll() as $k=>$r){
+            echo "<option value=\"$r[kodeSemester]\">$r[namaSemester]</option>";
+          }
+          ?>
+          <option selected="selected" value="<?php echo $kodeSemester;?>"><?php echo $namaSemester;?></option>
         </select>
-        <p>Golongan UKT
-            <select class="custom-select" id="golonganUKT" name="golonganUKT">
-						<option>Rp<?php echo $golonganUKT?></option>
-                <?php
-                $sql = "SELECT * FROM ukt"; 
-                $stmt = $pdo->prepare($sql); //menyiapkan query hasil select
-                $stmt->execute(); //menjalankan query
-                $stmt->setFetchMode(PDO::FETCH_ASSOC); //memetakan
-                ?>
-                <?php
-                  foreach($stmt->fetchAll() as $k=>$r){
-                    echo "<option value=\"$r[golonganUKT]\">Rp$r[tarifUKT]</option>";
-                  }
-                ?>
-            </select>
-            <div class="row mx-5">
-              <div class="col">
-                <input type="submit" class="btn "value="Cancel" name="cancel"/> <br>
-              </div>
-              <div class="col right-block">
-                <input type="submit" class="btn" value="Update" name="update"/>
-              </div>
-         </div>
+        <p>Tarif UKT
+        <select class="custom-select" id="ukt" name="golonganUKT">          
+        <?php
+          $sql = "SELECT * FROM ukt"; 
+          $stmt = $pdo->prepare($sql); //menyiapkan query hasil select
+          $stmt->execute(); //menjalankan query
+          $stmt->setFetchMode(PDO::FETCH_ASSOC); //memetakan
+          foreach($stmt->fetchAll() as $k=>$r){
+            echo "<option value=\"$r[golonganUKT]\">Rp$r[tarifUKT]</option>";
+          }
+          ?>
+          <option selected="selected" value="<?php echo $golonganUKT;?>">Rp<?php echo number_format($tarifUKT, 2, ",", ".");?></option>
+        </select>
+        <div class="row mx-5">
+          <div class="col">
+            <input type="submit" class="btn " value="Cancel" name="cancel"/>
+          </div>
+          <div class="col">
+            <input type="submit" class="btn float-right" value="Update" name="update"/> 
+          </div>
+        </div>
       </form>
     </div>
   <?php
     }
-  }
+}
   ?>  
 </div>
 </body>
